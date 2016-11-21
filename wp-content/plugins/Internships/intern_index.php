@@ -104,3 +104,8 @@ function intern_add_script()
 //    wp_enqueue_style('all-page-css', INTERN_DIR_URL.'UI/css/all_page.css', array());
 
 }
+
+//function custom_rewrite_basic() {
+//    add_rewrite_rule('^leaf/([0-9]+)/?', 'index.php?page_id=$matches[1]', 'top');
+//}
+//add_action('init', 'custom_rewrite_basic');
