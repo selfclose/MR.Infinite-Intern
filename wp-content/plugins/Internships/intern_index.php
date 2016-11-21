@@ -109,3 +109,7 @@ function intern_add_script()
 //    add_rewrite_rule('^leaf/([0-9]+)/?', 'index.php?page_id=$matches[1]', 'top');
 //}
 //add_action('init', 'custom_rewrite_basic');
+
+$data['title'] = 'Hello World';
+$output = (new \Jade\jade())->render(__DIR__.'/src/src_ui/Shortcode/template/resume.jade', $data);
+echo $output;
