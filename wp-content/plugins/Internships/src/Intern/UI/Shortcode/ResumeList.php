@@ -19,6 +19,9 @@ class ResumeList
         $page = isset($_GET['page']) ? $_GET['page'] : 1; //get current page
 
         $limit = 8; //limit per page
+        $page = (get_query_var('page')) ? get_query_var('page') : 1;
+        echo $page;
+//        $offset = ($paged - 1) * $number;
 
         $resume = new Resume();
         $university = new University();
