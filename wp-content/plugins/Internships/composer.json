@@ -1,5 +1,11 @@
 {
-  "require": {
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/ronan-gloo/jade-php"
+    }
+  ],
+  "require-dev": {
     "fzaninotto/faker": "^1.6",
     "components/jquery": "^3.1",
     "ivaynberg/select2": "^4.0"
