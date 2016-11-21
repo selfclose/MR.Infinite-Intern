@@ -3,7 +3,7 @@ require_once __DIR__.'/src/vendor/RedBeanPHP4_3_3/rb.php';
 require_once __DIR__.'/src/autoload.php';
 require_once __DIR__.'/src/manualload.php';
 require_once (__DIR__.'/vendor/fzaninotto/faker/src/autoload.php');
-//require_once __DIR__.'/vendor/autoload.php'; //composer autoload
+require_once __DIR__.'/vendor/autoload.php'; //composer autoload
 
 $database_name = DB_NAME.'_intern';
 
