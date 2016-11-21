@@ -1,28 +1,26 @@
 <?php
-include_once __DIR__.'/config.php';
+require_once __DIR__.'/src/vendor/RedBeanPHP4_3_3/rb.php';
 require_once __DIR__.'/src/autoload.php';
-require_once __DIR__.'/vendor/autoload.php'; //composer autoload
+require_once __DIR__.'/src/manualload.php';
+require_once (__DIR__.'/vendor/fzaninotto/faker/src/autoload.php');
+//require_once __DIR__.'/vendor/autoload.php'; //composer autoload
 
-?>
-<head> <meta charset="UTF-8"> </head>
-<link rel='stylesheet' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-<link rel='stylesheet' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-<link rel='stylesheet' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css'>
-<link rel='stylesheet' type='text/css' href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'>
-<link rel='stylesheet' type='text/css' href='src/Intern/UI/css/all_page.css'>
+$database_name = DB_NAME.'_intern';
 
-<!--<script src='vendor/components/jquery/jquery.min.js'></script>-->
-<!--<script src='vendor/ivaynberg/select2/dist/js/select2.full.min.js'></script>-->
-<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-<script src='//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js'></script>
+R::setup( sprintf('mysql:host=%s;dbname=%s', DB_HOST, $database_name), DB_USER, DB_PASSWORD );
 
-<!--http://www.jqueryscript.net/time-clock/Beautiful-ES5-ES6-Date-Daterange-Picker-For-jQuery.html-->
-<script src="http://www.jqueryscript.net/demo/Progress-Bar-Style-Date-Range-Indicator-Plugin-with-jQuery-daterangeBar/src/js/daterangeBar.js"></script>
+//If connected
+if (R::testConnection()) {
+//    R::debug(true); //Un-comment this for see debugging
+}
+else {
+    echo ("Can't connect database, Please check include.php for config. OR Create table for table's name");
 
-<link rel='stylesheet' type='text/css' href='src/Intern/UI/vendor/DateTimePicker/DateTimePicker.min.css'>
-<script src='src/Intern/UI/vendor/DateTimePicker/DateTimePicker.min.js'></script>
-
-<!--TinyMCE-->
-<link rel='stylesheet' href='//www.tinymce.com/css/codepen.min.css'>
-<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+    //try create DB
+    global $wpdb;
+    if ($wpdb->query("CREATE DATABASE {$database_name}")) {
+        echo "Create database {$database_name} success!";
+    }
+    exit;
+}
 

@@ -2,7 +2,7 @@
 namespace Intern\Model;
 
 use Intern\ConcatTrait\EnabledTrait;
-use Intern\Controller\RedBeanController;
+use vendor\MrInfinite\Controller\RedBeanController;
 
 /**
  * @property int id

@@ -1,6 +1,6 @@
 <?php
 namespace Intern\Model;
-use Intern\Controller\RedBeanController;
+use vendor\MrInfinite\Controller\RedBeanController;
 
 /**
  * Class Geo

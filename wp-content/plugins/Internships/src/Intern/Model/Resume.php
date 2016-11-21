@@ -1,7 +1,7 @@
 <?php
 namespace Intern\Model;
+use vendor\MrInfinite\Controller\RedBeanController;
 
-use Intern\Controller\RedBeanController;
 
 /**
  * Class Resume
