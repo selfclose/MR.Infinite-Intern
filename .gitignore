@@ -52,5 +52,7 @@ example/components
 *.php__jb_tmp__
 example/vendor
 *.lock
+
+wp-config.php
 /wp-content/plugins/Internships/vendor/
 !/wp-content/plugins/Internships/vendor/mrinfinite
