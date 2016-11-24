@@ -135,5 +135,4 @@ function intern_on_active_plugin()
     $post->setAuthorId(get_current_user_id());
 
     $post->insertPost();
-
 }
