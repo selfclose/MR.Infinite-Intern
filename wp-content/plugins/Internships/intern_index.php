@@ -127,35 +127,13 @@ function the_slug_exists($post_name) {
 
 function intern_on_active_plugin()
 {
-    $posts = [
-        [
-            'title' => 'Intern-Resume-List',
-            'slug' => 'resume-list',
-            'content' => '[intern_resume_list]',
-        ]
-    ];
+    $post = new \vendor\MrInfinite\Controller\WPPostController();
 
-    foreach ($posts as $post) {
+    $post->setTitle('Intern-Resume-List');
+    $post->setSlug('resume-list');
+    $post->setContent('[intern_resume_list]<br/>This is all the HTML.');
+    $post->setAuthorId(get_current_user_id());
 
-        $blog_page_title = $post['title'];
-        $blog_page_slug = $post['slug'];
-        $blog_page_content = $post['content'];
-        $blog_page_check = get_page_by_title($blog_page_title);
-        $blog_page = array(
-            'post_type' => 'page',
-            'post_title' => $blog_page_title,
-            'post_content' => $blog_page_content,
-            'post_status' => 'publish',
-            'post_author' => 1,
-            'post_name' => $blog_page_slug
-        );
-        if (!isset($blog_page_check->ID) && !the_slug_exists($blog_page_slug)) {
-            $blog_page_id = wp_insert_post($blog_page);
-            echo "insert post: " . $blog_page_id;
-        }
+    $post->insertPost();
 
-        /**
-         * @see https://clicknathan.com/web-design/automatically-create-pages-wordpress/
-         */
-    }
 }
