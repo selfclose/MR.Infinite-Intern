@@ -3,7 +3,7 @@ namespace Intern\Model;
 
 use Intern\ConcatTrait\EnabledTrait;
 use Intern\ConcatTrait\NameTrait;
-use Intern\Controller\RedBeanController;
+use vendor\MrInfinite\Controller\RedBeanController;
 
 /**
  * @property string name

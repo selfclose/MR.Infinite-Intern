@@ -1,7 +1,7 @@
 <?php
 namespace Intern\Model;
 use Intern\ConcatTrait\NameLangTrait;
-use Intern\Controller\RedBeanController;
+use vendor\MrInfinite\Controller\RedBeanController;
 
 class UniversityType extends RedBeanController
 {

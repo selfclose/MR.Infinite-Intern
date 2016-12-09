@@ -2,7 +2,7 @@
 namespace Intern\Model;
 use Intern\ConcatTrait\ImageTrait;
 use Intern\ConcatTrait\NameTrait;
-use Intern\Controller\RedBeanController;
+use vendor\MrInfinite\Controller\RedBeanController;
 
 /**
  * @property string id

@@ -27,7 +27,7 @@ spl_autoload_register(function ($className) {
 
 function iLog($string, $info = false) {
     try {flush();} catch (Exception $e) {}
-    ob_flush();
+    try {ob_flush();} catch (Exception $e) {}
     if ($info)
         echo "<script>console.info(\"{$string}\");</script>";
     else

@@ -27,6 +27,7 @@ class Importer
         $faker = \Faker\Factory::create();
 
         iLog('**** Purging All Data! ****', true);
+        \R::debug(true);
         \R::nuke(); //purge all tables
 
         //order by priority

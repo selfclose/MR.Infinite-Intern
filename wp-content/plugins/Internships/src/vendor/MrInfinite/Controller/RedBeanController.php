@@ -260,7 +260,7 @@ class RedBeanController
         $lpm1 = $lastPage - 1; // //last page minus 1
 
         $pagination = "";
-        $url = '?';
+        $url = '?page=';
 
         if($lastPage > 1){
             $pagination .= "<ul class='pagination'>";
@@ -268,8 +268,8 @@ class RedBeanController
 
             //if page more than 1
             if ($page > 1) {
-                $pagination.= "<li><a href='{$url}page=1'>{$firstLabel}</a></li>";
-                $pagination.= "<li><a href='{$url}page={$prev}'>{$prevLabel}</a></li>";
+                $pagination.= "<li><a href='{$url}1'>{$firstLabel}</a></li>";
+                $pagination.= "<li><a href='{$url}{$prev}'>{$prevLabel}</a></li>";
             }
 
             if ($lastPage < 7 + ($adjacents * 2)){
@@ -279,7 +279,7 @@ class RedBeanController
                     if ($i == $page)
                         $pagination.= "<li><a class='current'>ioi{$i}</a></li>";
                     else
-                        $pagination.= "<li><a href='{$url}{$prefix}={$i}'>{$i}</a></li>";
+                        $pagination.= "<li><a href='{$url}{$i}'>{$i}</a></li>";
                 }
 
             } elseif($lastPage > 5 + ($adjacents * 2)){
@@ -290,16 +290,16 @@ class RedBeanController
                         if ($i == $page)
                             $pagination.= "<li class='active'><a class='current'>{$i}</a></li>";
                         else
-                            $pagination.= "<li><a href='{$url}page={$i}'>{$i}</a></li>";
+                            $pagination.= "<li><a href='{$url}{$i}'>{$i}</a></li>";
                     }
                     $pagination.= "<li class='dot'><a>...</a></li>";
-                    $pagination.= "<li><a href='{$url}page={$lpm1}'>{$lpm1}</a></li>";
-                    $pagination.= "<li><a href='{$url}page={$lastPage}'>{$lastPage}</a></li>";
+                    $pagination.= "<li><a href='{$url}{$lpm1}'>{$lpm1}</a></li>";
+                    $pagination.= "<li><a href='{$url}{$lastPage}'>{$lastPage}</a></li>";
 
                 } elseif($lastPage - ($adjacents * 2) > $page && $page > ($adjacents * 2)) {
                     //when middle end
-                    $pagination.= "<li><a href='{$url}page=1'>1</a></li>";
-                    $pagination.= "<li><a href='{$url}page=2'>2</a></li>";
+                    $pagination.= "<li><a href='{$url}1'>1</a></li>";
+                    $pagination.= "<li><a href='{$url}2'>2</a></li>";
                     //when middle first
                     $pagination.= "<li class='dot'><a>...l</a></li>";
                     for ($i = $page - $adjacents; $i <= $page + $adjacents; $i++) {
@@ -307,30 +307,30 @@ class RedBeanController
                         if ($i == $page)
                             $pagination .= "<li class='active'><a class='current'>{$i}</a></li>";
                         else
-                            $pagination .= "<li><a href='{$url}page={$i}'>{$i}</a></li>";
+                            $pagination .= "<li><a href='{$url}{$i}'>{$i}</a></li>";
                     }
                     $pagination.= "<li class='dot'><a> ..p</a></li>";
-                    $pagination.= "<li><a href='{$url}page={$lpm1}'>{$lpm1}</a></li>";
-                    $pagination.= "<li><a href='{$url}page={$lastPage}'>{$lastPage}</a></li>";
+                    $pagination.= "<li><a href='{$url}{$lpm1}'>{$lpm1}</a></li>";
+                    $pagination.= "<li><a href='{$url}{$lastPage}'>{$lastPage}</a></li>";
 
                 } else {
                     //When end
-                    $pagination.= "<li><a href='{$url}page=1'>1</a></li>";
-                    $pagination.= "<li><a href='{$url}page=2'>2</a></li>";
+                    $pagination.= "<li><a href='{$url}1'>1</a></li>";
+                    $pagination.= "<li><a href='{$url}2'>2</a></li>";
                     //split front
                     $pagination.= "<li class='dot'><a>..</a></li>";
                     for ($i = $lastPage - (2 + ($adjacents * 2)); $i <= $lastPage; $i++) {
                         if ($i == $page)
                             $pagination.= "<li class='active'><a class='current'>{$i}</a></li>";
                         else
-                            $pagination.= "<li><a href='{$url}page={$i}'>{$i}</a></li>";
+                            $pagination.= "<li><a href='{$url}{$i}'>{$i}</a></li>";
                     }
                 }
             }
 
             if ($page < $i - 1) {
-                $pagination.= "<li><a href='{$url}page={$next}'>{$nextLabel}</a></li>";
-                $pagination.= "<li><a href='{$url}page=$lastPage'>{$lastLabel}</a></li>";
+                $pagination.= "<li><a href='{$url}{$next}'>{$nextLabel}</a></li>";
+                $pagination.= "<li><a href='{$url}{$lastPage}'>{$lastLabel}</a></li>";
             }
 
             $pagination.= "</ul>";
