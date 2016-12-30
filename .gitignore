@@ -54,5 +54,6 @@ example/vendor
 *.lock
 
 wp-config.php
-/wp-content/plugins/Internships/vendor/
+wp-content/plugins/Internships/components/*
+wp-content/plugins/Internships/vendor/*
 !/wp-content/plugins/Internships/vendor/mrinfinite
