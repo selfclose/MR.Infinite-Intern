@@ -29,7 +29,7 @@ class Skill extends ModelController
 //     */
 //    public function getSkillType()
 //    {
-//        return $this->dataModel->skilltype_id;
+//        return $this->skilltype_id;
 //    }
 //
 //    /**
@@ -37,7 +37,7 @@ class Skill extends ModelController
 //     */
 //    public function setSkillType($type)
 //    {
-//        $this->dataModel->skilltype_id = $type;
+//        $this->skilltype_id = $type;
 //    }
 
     /**
@@ -45,7 +45,7 @@ class Skill extends ModelController
      */
     public function getSkillType()
     {
-        return $this->dataModel->sharedSkill;
+        return $this->sharedSkill;
     }
 
     /**
@@ -53,17 +53,17 @@ class Skill extends ModelController
      */
     public function setSkillType($skills)
     {
-        unset($this->dataModel->sharedSkill);
+        unset($this->sharedSkill);
         if (is_array($skills)) {
             foreach ($skills as $skill) {
-                $this->dataModel->sharedSkill[] = Skill::readAction($skill);// \R::load('skill', $skill);
+                $this->sharedSkill[] = Skill::readAction($skill);// \R::load('skill', $skill);
             }
         }
     }
 
     public function addSkill($skill)
     {
-        $this->dataModel->sharedSkill[] = \R::load('skill', $skill);
+        $this->sharedSkill[] = \R::load('skill', $skill);
         iLog($skill);
     }
 

@@ -9,7 +9,7 @@ trait NameTrait
      */
     public function getName()
     {
-        return $this->dataModel->name;
+        return $this->name;
     }
 
     /**
@@ -17,6 +17,6 @@ trait NameTrait
      */
     public function setName($name)
     {
-        $this->dataModel->name = $name;
+        $this->name = $name;
     }
 }

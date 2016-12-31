@@ -16,17 +16,12 @@ class Province extends ModelController
 {
     use NameLangTrait;
 
-    function __construct($tableId = 0)
-    {
-        parent::__construct($tableId);
-    }
-
     /**
      * @return int
      */
     public function getProvinceId()
     {
-        return $this->dataModel->provinceid;
+        return $this->provinceid;
     }
 
     /**
@@ -34,7 +29,7 @@ class Province extends ModelController
      */
     public function setProvinceId($province_id)
     {
-        $this->dataModel->provinceid = $province_id;
+        $this->provinceid = $province_id;
     }
 
     /**
@@ -42,7 +37,7 @@ class Province extends ModelController
      */
     public function getGeoId()
     {
-        return $this->dataModel->geo_id;
+        return $this->geo_id;
     }
 
     /**
@@ -50,8 +45,8 @@ class Province extends ModelController
      */
     public function setGeoId($geo_id)
     {
-        $this->dataModel->geo_id = $geo_id;
-//        $this->dataModel->setMeta("buildcommand.unique", [[$this->dataModel->province_id]]);
+        $this->geo_id = $geo_id;
+//        $this->setMeta("buildcommand.unique", [[$this->province_id]]);
     }
 
 }

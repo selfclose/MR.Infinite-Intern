@@ -20,6 +20,6 @@ class EducationSubMajor extends ModelController
     {
         parent::__construct($id);
 
-        $this->dataModel->honour = 0;
+        $this->honour = 0;
     }
 }

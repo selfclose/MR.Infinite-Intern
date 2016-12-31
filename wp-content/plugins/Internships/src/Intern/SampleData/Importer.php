@@ -32,7 +32,7 @@ class Importer
 
         //order by priority
         new GeoImport();
-        new ProvinceImport();
+        new ProvinceImport();die('endImport');
         new CompanyTypeImport();
         new CompanyImport();
         new CompanyDepartmentImport(); //need company & user

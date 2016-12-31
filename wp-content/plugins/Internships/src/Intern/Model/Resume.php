@@ -42,7 +42,7 @@ class Resume extends ModelController
     public function getUser()
     {
         if (empty($this->user)) {
-            $this->user = new User($this->dataModel->wp_users_id);
+            $this->user = new User($this->wp_users_id);
         }
         return $this->user;
     }
@@ -52,7 +52,7 @@ class Resume extends ModelController
      */
     public function setUser($userId)
     {
-        $this->dataModel->wp_users_id = $userId;
+        $this->wp_users_id = $userId;
     }
 
     /**
@@ -60,7 +60,7 @@ class Resume extends ModelController
      */
     public function getTitle()
     {
-        return $this->dataModel->title;
+        return $this->title;
     }
 
     /**
@@ -68,7 +68,7 @@ class Resume extends ModelController
      */
     public function setTitle($title)
     {
-        $this->dataModel->title = $title;
+        $this->title = $title;
     }
 
     /**
@@ -76,7 +76,7 @@ class Resume extends ModelController
      */
     public function getPingCompanyId()
     {
-        return $this->dataModel->company_id;
+        return $this->company_id;
     }
 
     /**
@@ -84,7 +84,7 @@ class Resume extends ModelController
      */
     public function setPingCompanyId($ping_company_id)
     {
-        $this->dataModel->company_id = $ping_company_id;
+        $this->company_id = $ping_company_id;
     }
 
     /**
@@ -92,7 +92,7 @@ class Resume extends ModelController
      */
     public function getOutDate()
     {
-        return $this->dataModel->out_date;
+        return $this->out_date;
     }
 
     /**
@@ -100,7 +100,7 @@ class Resume extends ModelController
      */
     public function setOutDate($out_date)
     {
-        $this->dataModel->out_date = $out_date;
+        $this->out_date = $out_date;
     }
 
     /**
@@ -108,7 +108,7 @@ class Resume extends ModelController
      */
     public function getType()
     {
-        return $this->dataModel->type;
+        return $this->type;
     }
 
     /**
@@ -116,7 +116,7 @@ class Resume extends ModelController
      */
     public function setType($type)
     {
-        $this->dataModel->type = $type;
+        $this->type = $type;
     }
 
     /**
@@ -124,7 +124,7 @@ class Resume extends ModelController
      */
     public function getStartDate()
     {
-        return $this->dataModel->start_date;
+        return $this->start_date;
     }
 
     /**
@@ -132,7 +132,7 @@ class Resume extends ModelController
      */
     public function setStartDate($start_date)
     {
-        $this->dataModel->start_date = $start_date;
+        $this->start_date = $start_date;
     }
 
     /**
@@ -140,7 +140,7 @@ class Resume extends ModelController
      */
     public function getEndDate()
     {
-        return $this->dataModel->end_date;
+        return $this->end_date;
     }
 
     /**
@@ -148,7 +148,7 @@ class Resume extends ModelController
      */
     public function setEndDate($end_date)
     {
-        $this->dataModel->end_date = $end_date;
+        $this->end_date = $end_date;
     }
 
     /**
@@ -156,7 +156,7 @@ class Resume extends ModelController
      */
     public function getAttachUrl()
     {
-        return $this->dataModel->attach_url;
+        return $this->attach_url;
     }
 
     /**
@@ -164,7 +164,7 @@ class Resume extends ModelController
      */
     public function setAttachUrl($attach_url)
     {
-        $this->dataModel->attach_url = $attach_url;
+        $this->attach_url = $attach_url;
     }
 
     /**
@@ -172,7 +172,7 @@ class Resume extends ModelController
      */
     public function getDescription()
     {
-        return $this->dataModel->description;
+        return $this->description;
     }
 
     /**
@@ -180,7 +180,7 @@ class Resume extends ModelController
      */
     public function setDescription($description)
     {
-        $this->dataModel->description = $description;
+        $this->description = $description;
     }
 
     /**
@@ -188,7 +188,7 @@ class Resume extends ModelController
      */
     public function getPublic()
     {
-        return $this->dataModel->public;
+        return $this->public;
     }
 
     /**
@@ -196,7 +196,7 @@ class Resume extends ModelController
      */
     public function setPublic($public)
     {
-        $this->dataModel->public = $public;
+        $this->public = $public;
     }
 
     /**
@@ -204,7 +204,7 @@ class Resume extends ModelController
      */
     public function getStatus()
     {
-        return $this->dataModel->status;
+        return $this->status;
     }
 
     /**
@@ -212,6 +212,6 @@ class Resume extends ModelController
      */
     public function setStatus($status)
     {
-        $this->dataModel->status = $status;
+        $this->status = $status;
     }
 }

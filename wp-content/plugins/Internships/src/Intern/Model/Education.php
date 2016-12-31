@@ -25,13 +25,9 @@ class Education extends ModelController
     protected $user;
     protected $degree;
     protected $major;
-
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-
-        $this->dataModel->honour = 0;
-    }
+    protected $wp_users_id;
+    protected $honour = 0;
+    protected $degree_id;
 
     //TODO: mis understanding move please
     /**
@@ -40,7 +36,7 @@ class Education extends ModelController
     public function getUser()
     {
         if (empty($this->user)) {
-            $this->user = new User($this-$this->dataModel->wp_users_id);
+            $this->user = new User($this-$this->wp_users_id);
         }
         return $this->user;
     }
@@ -50,7 +46,7 @@ class Education extends ModelController
      */
     public function setUser($user_id)
     {
-        $this->dataModel->wp_users_id = $user_id;
+        $this->wp_users_id = $user_id;
     }
 
     /**
@@ -59,7 +55,7 @@ class Education extends ModelController
     public function getDegree()
     {
         if (empty($degree)) {
-            $this->degree = new EducationDegree($this->dataModel->degree_id);
+            $this->degree = new EducationDegree($this->degree_id);
         }
         return $this->degree;
     }
@@ -69,7 +65,7 @@ class Education extends ModelController
      */
     public function setDegree($degree_id)
     {
-        $this->dataModel->degree_id = $degree_id;
+        $this->degree_id = $degree_id;
     }
 
     /**
@@ -78,7 +74,7 @@ class Education extends ModelController
     public function getMajors()
     {
         if (empty($this->major)) {
-            $this->major = new EducationMajor($this->dataModel->major_id);
+            $this->major = new EducationMajor($this->major_id);
         }
         return $this->major;
     }
@@ -88,7 +84,7 @@ class Education extends ModelController
      */
     public function setMajors($major_id)
     {
-        $this->dataModel->major_id = $major_id;
+        $this->major_id = $major_id;
     }
 
     /**
@@ -112,7 +108,7 @@ class Education extends ModelController
      */
     public function getUniversity()
     {
-        return new University($this->dataModel->sharedUniversity);
+        return new University($this->sharedUniversity);
     }
 
     /**
@@ -120,7 +116,7 @@ class Education extends ModelController
      */
     public function setUniversity($university_id)
     {
-        $this->dataModel->university_id = $university_id;
+        $this->university_id = $university_id;
     }
 
     /**
@@ -128,7 +124,7 @@ class Education extends ModelController
      */
     public function getGPA()
     {
-        return $this->dataModel->GPA;
+        return $this->GPA;
     }
 
     /**
@@ -136,7 +132,7 @@ class Education extends ModelController
      */
     public function setGPA($GPA)
     {
-        $this->dataModel->GPA = $GPA;
+        $this->GPA = $GPA;
     }
 
     /**
@@ -144,7 +140,7 @@ class Education extends ModelController
      */
     public function getStartYear()
     {
-        return $this->dataModel->start_year;
+        return $this->start_year;
     }
 
     /**
@@ -152,7 +148,7 @@ class Education extends ModelController
      */
     public function setStartYear($start_year)
     {
-        $this->dataModel->start_year = $start_year;
+        $this->start_year = $start_year;
     }
 
     /**
@@ -160,7 +156,7 @@ class Education extends ModelController
      */
     public function getEndYear()
     {
-        return $this->dataModel->end_year;
+        return $this->end_year;
     }
 
     /**
@@ -168,7 +164,7 @@ class Education extends ModelController
      */
     public function setEndYear($end_year)
     {
-        $this->dataModel->end_year = $end_year;
+        $this->end_year = $end_year;
     }
 
     /**
@@ -176,7 +172,7 @@ class Education extends ModelController
      */
     public function getHonour()
     {
-        return $this->dataModel->honour;
+        return $this->honour;
     }
 
     /**
@@ -184,6 +180,6 @@ class Education extends ModelController
      */
     public function setHonour($honour)
     {
-        $this->dataModel->honour = $honour;
+        $this->honour = $honour;
     }
 }

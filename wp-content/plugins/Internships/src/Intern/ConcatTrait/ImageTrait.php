@@ -5,11 +5,16 @@ namespace Intern\ConcatTrait;
 trait ImageTrait
 {
     /**
+     * @var string $image
+     */
+    protected $image;
+
+    /**
      * @return string
      */
     public function getImageUrl()
     {
-        return $this->dataModel->image;
+        return $this->image;
     }
 
     /**
@@ -17,7 +22,7 @@ trait ImageTrait
      */
     public function setImageUrl($url)
     {
-        $this->dataModel->image = $url;
+        $this->image = $url;
     }
 
 }

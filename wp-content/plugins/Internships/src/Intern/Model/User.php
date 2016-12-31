@@ -93,7 +93,7 @@ class User extends ModelController
      */
     public function getUsername()
     {
-        return $this->dataModel->username;
+        return $this->username;
     }
 
     /**
@@ -101,7 +101,7 @@ class User extends ModelController
      */
     public function setUsername($username)
     {
-        $this->dataModel->username = $username;
+        $this->username = $username;
     }
 
     //TODO: Use something such as Wordpress for make password.
@@ -110,7 +110,7 @@ class User extends ModelController
      */
     public function setPassword($password)
     {
-        $this->dataModel->password = $password;
+        $this->password = $password;
     }
 
     /**
@@ -118,7 +118,7 @@ class User extends ModelController
      */
     public function getDisplayName()
     {
-        return $this->dataModel->display_name;
+        return $this->display_name;
     }
 
     /**
@@ -126,7 +126,7 @@ class User extends ModelController
      */
     public function setDisplayName($display_name)
     {
-        $this->dataModel->display_name = $display_name;
+        $this->display_name = $display_name;
     }
 
     /**
@@ -134,7 +134,7 @@ class User extends ModelController
      */
     public function getAddress()
     {
-        return $this->dataModel->address;
+        return $this->address;
     }
 
     /**
@@ -142,7 +142,7 @@ class User extends ModelController
      */
     public function setAddress($address)
     {
-        $this->dataModel->address = $address;
+        $this->address = $address;
     }
 
     /**
@@ -150,7 +150,7 @@ class User extends ModelController
      */
     public function getEmail()
     {
-        return $this->dataModel->email;
+        return $this->email;
     }
 
     /**
@@ -158,7 +158,7 @@ class User extends ModelController
      */
     public function setEmail($email)
     {
-        $this->dataModel->email = $email;
+        $this->email = $email;
     }
 
     /**
@@ -166,7 +166,7 @@ class User extends ModelController
      */
     public function getGender()
     {
-        return $this->dataModel->gender;
+        return $this->gender;
     }
 
     /**
@@ -174,7 +174,7 @@ class User extends ModelController
      */
     public function setGender($gender)
     {
-        $this->dataModel->gender = $gender;
+        $this->gender = $gender;
     }
 
     /**
@@ -182,7 +182,7 @@ class User extends ModelController
      */
     public function getUserUrl()
     {
-        return $this->dataModel->userUrl;
+        return $this->userUrl;
     }
 
     /**
@@ -190,7 +190,7 @@ class User extends ModelController
      */
     public function setUserUrl($userUrl)
     {
-        $this->dataModel->userUrl = $userUrl;
+        $this->userUrl = $userUrl;
     }
 
     /**
@@ -198,7 +198,7 @@ class User extends ModelController
      */
     public function getRole()
     {
-        return $this->dataModel->role;
+        return $this->role;
     }
 
     /**
@@ -206,7 +206,7 @@ class User extends ModelController
      */
     public function setRole($role)
     {
-        $this->dataModel->role = $role;
+        $this->role = $role;
     }
 
     /**
@@ -214,7 +214,7 @@ class User extends ModelController
      */
     public function getCompany()
     {
-        return $this->dataModel->company;
+        return $this->company;
     }
 
     /**
@@ -222,7 +222,7 @@ class User extends ModelController
      */
     public function setCompany($company)
     {
-        $this->dataModel->company = $company;
+        $this->company = $company;
     }
 
     /**
@@ -230,7 +230,7 @@ class User extends ModelController
      */
     public function getBirthDate()
     {
-        return $this->dataModel->birthDate;
+        return $this->birthDate;
     }
 
     /**
@@ -238,7 +238,7 @@ class User extends ModelController
      */
     public function setBirthDate($birthDate)
     {
-        $this->dataModel->birthDate = $birthDate;
+        $this->birthDate = $birthDate;
     }
 
     /**
@@ -246,7 +246,7 @@ class User extends ModelController
      */
     public function getZipcode()
     {
-        return $this->dataModel->zipcode;
+        return $this->zipcode;
     }
 
     /**
@@ -254,7 +254,7 @@ class User extends ModelController
      */
     public function setZipcode($zipcode)
     {
-        $this->dataModel->zipcode = $zipcode;
+        $this->zipcode = $zipcode;
     }
 
     /**
@@ -263,7 +263,7 @@ class User extends ModelController
     public function getProvince()
     {
         if (empty($this->province)) {
-            $this->province = new Province($this->dataModel->province_id);
+            $this->province = new Province($this->province_id);
         }
         return $this->province;
     }
@@ -273,7 +273,7 @@ class User extends ModelController
      */
     public function setProvince($province_id)
     {
-        $this->dataModel->province_id = $province_id;
+        $this->province_id = $province_id;
     }
 
     /**
@@ -281,7 +281,7 @@ class User extends ModelController
      */
     public function getDescription()
     {
-        return $this->dataModel->description;
+        return $this->description;
     }
 
     /**
@@ -289,7 +289,7 @@ class User extends ModelController
      */
     public function setDescription($description)
     {
-        $this->dataModel->description = $description;
+        $this->description = $description;
     }
 
     /**
@@ -297,7 +297,7 @@ class User extends ModelController
      */
     public function getFacebook()
     {
-        return $this->dataModel->facebook;
+        return $this->facebook;
     }
 
     /**
@@ -305,7 +305,7 @@ class User extends ModelController
      */
     public function setFacebook($facebook)
     {
-        $this->dataModel->facebook = $facebook;
+        $this->facebook = $facebook;
     }
 
     /**
@@ -313,7 +313,7 @@ class User extends ModelController
      */
     public function getInstagram()
     {
-        return $this->dataModel->instagram;
+        return $this->instagram;
     }
 
     /**
@@ -321,7 +321,7 @@ class User extends ModelController
      */
     public function setInstagram($instagram)
     {
-        $this->dataModel->instagram = $instagram;
+        $this->instagram = $instagram;
     }
 
     /**
@@ -329,7 +329,7 @@ class User extends ModelController
      */
     public function getLine()
     {
-        return $this->dataModel->line;
+        return $this->line;
     }
 
     /**
@@ -337,7 +337,7 @@ class User extends ModelController
      */
     public function setLine($line)
     {
-        $this->dataModel->line = $line;
+        $this->line = $line;
     }
 
     /**
@@ -345,7 +345,7 @@ class User extends ModelController
      */
     public function getProfileImage()
     {
-        return $this->dataModel->profile_image;
+        return $this->profile_image;
     }
 
     /**
@@ -353,7 +353,7 @@ class User extends ModelController
      */
     public function setProfileImage($profile_image)
     {
-        $this->dataModel->profile_image = $profile_image;
+        $this->profile_image = $profile_image;
     }
 
     /**
@@ -361,7 +361,7 @@ class User extends ModelController
      */
     public function isIsConscripted()
     {
-        return $this->dataModel->is_conscripted;
+        return $this->is_conscripted;
     }
 
     /**
@@ -369,7 +369,7 @@ class User extends ModelController
      */
     public function setIsConscripted($is_conscripted)
     {
-        $this->dataModel->is_conscripted = $is_conscripted;
+        $this->is_conscripted = $is_conscripted;
     }
 
     /**
@@ -377,7 +377,7 @@ class User extends ModelController
      */
     public function isGotJob()
     {
-        return $this->dataModel->got_job;
+        return $this->got_job;
     }
 
     /**
@@ -385,7 +385,7 @@ class User extends ModelController
      */
     public function setGotJob($got_job)
     {
-        $this->dataModel->got_job = $got_job;
+        $this->got_job = $got_job;
     }
 
     /**
@@ -393,7 +393,7 @@ class User extends ModelController
      */
     public function getFavorite()
     {
-        return $this->dataModel->favorite;
+        return $this->favorite;
     }
 
     /**
@@ -401,7 +401,7 @@ class User extends ModelController
      */
     public function setFavorite($favorite)
     {
-        $this->dataModel->favorite = $favorite;
+        $this->favorite = $favorite;
     }
 
     /**
@@ -409,7 +409,7 @@ class User extends ModelController
      */
     public function getCompanyId()
     {
-        return $this->dataModel->company_id;
+        return $this->company_id;
     }
 
     /**
@@ -417,7 +417,7 @@ class User extends ModelController
      */
     public function setCompanyId($company_id)
     {
-        $this->dataModel->company_id = $company_id;
+        $this->company_id = $company_id;
     }
 
     /**
@@ -425,7 +425,7 @@ class User extends ModelController
      */
     public function getDepartmentId()
     {
-        return $this->dataModel->department_id;
+        return $this->department_id;
     }
 
     /**
@@ -433,7 +433,7 @@ class User extends ModelController
      */
     public function setDepartmentId($department_id)
     {
-        $this->dataModel->department_id = $department_id;
+        $this->department_id = $department_id;
     }
 
     /**
@@ -441,7 +441,7 @@ class User extends ModelController
      */
     public function getBookmark()
     {
-        return unserialize($this->dataModel->bookmark);
+        return unserialize($this->bookmark);
     }
 
     /**
@@ -449,7 +449,7 @@ class User extends ModelController
      */
     public function setBookmark($bookmark)
     {
-        $this->dataModel->bookmark = serialize($bookmark);
+        $this->bookmark = serialize($bookmark);
     }
 
     /**
@@ -465,7 +465,7 @@ class User extends ModelController
      */
     public function getWebsite()
     {
-        return unserialize($this->dataModel->website);
+        return unserialize($this->website);
     }
 
     /**
@@ -473,7 +473,7 @@ class User extends ModelController
      */
     public function setWebsite($website)
     {
-        $this->dataModel->website = serialize($website);
+        $this->website = serialize($website);
     }
 
     /**
@@ -481,7 +481,7 @@ class User extends ModelController
      */
     public function getTel()
     {
-        return $this->dataModel->tel;
+        return $this->tel;
     }
 
     /**
@@ -489,7 +489,7 @@ class User extends ModelController
      */
     public function setTel($tel)
     {
-        $this->dataModel->tel = $tel;
+        $this->tel = $tel;
     }
 
     /**
@@ -497,7 +497,7 @@ class User extends ModelController
      */
     public function getEducations()
     {
-        return $this->dataModel->sharedEducation;
+        return $this->sharedEducation;
     }
 
     /**
@@ -505,10 +505,10 @@ class User extends ModelController
      */
     public function setEducations($educations)
     {
-        unset($this->dataModel->sharedEducation);
+        unset($this->sharedEducation);
         if (is_array($educations)) {
             foreach ($educations as $education) {
-                $this->dataModel->sharedEducation[] = \R::load(Table::education, $education);
+                $this->sharedEducation[] = \R::load(Table::education, $education);
             }
         }
     }
@@ -518,7 +518,7 @@ class User extends ModelController
      */
     public function getSkills()
     {
-        return $this->dataModel->sharedSkill;
+        return $this->sharedSkill;
     }
 
     /**
@@ -526,10 +526,10 @@ class User extends ModelController
      */
     public function setSkills($skills)
     {
-        unset($this->dataModel->sharedSkill);
+        unset($this->sharedSkill);
         if (is_array($skills)) {
             foreach ($skills as $skill) {
-                $this->dataModel->sharedSkill[] = \R::load('skill', $skill);
+                $this->sharedSkill[] = \R::load('skill', $skill);
             }
         }
     }
@@ -539,7 +539,7 @@ class User extends ModelController
      */
     public function getResumes()
     {
-        return array_keys($this->dataModel->ownResume);
+        return array_keys($this->ownResume);
     }
 
     /**
@@ -547,10 +547,10 @@ class User extends ModelController
      */
     public function setResumes($resumes)
     {
-        unset($this->dataModel->ownResume);
+        unset($this->ownResume);
         if (is_array($resumes)) {
             foreach ($resumes as $resume) {
-                $this->dataModel->ownResume[] = \R::load(Table::resume, $resume);
+                $this->ownResume[] = \R::load(Table::resume, $resume);
             }
         }
     }
@@ -560,7 +560,7 @@ class User extends ModelController
      */
     public function getBadge()
     {
-        return array_keys($this->dataModel->sharedBadge);
+        return array_keys($this->sharedBadge);
     }
 
     /**
@@ -568,10 +568,10 @@ class User extends ModelController
      */
     public function setBadge($badges)
     {
-        unset($this->dataModel->sharedBadge);
+        unset($this->sharedBadge);
         if (is_array($badges)) {
             foreach ($badges as $badge) {
-                $this->dataModel->sharedBadge[] = \R::load(Table::badge, $badge);
+                $this->sharedBadge[] = \R::load(Table::badge, $badge);
             }
         }
     }
@@ -581,7 +581,7 @@ class User extends ModelController
      */
     public function isSendToJob()
     {
-        return array_keys($this->dataModel->sharedBadge);
+        return array_keys($this->sharedBadge);
     }
 
     /**
@@ -589,10 +589,10 @@ class User extends ModelController
      */
     public function setSentToCompany($companies)
     {
-        unset($this->dataModel->sharedJob);
+        unset($this->sharedJob);
         if (is_array($companies)) {
             foreach ($companies as $company_id) {
-                $this->dataModel->sharedCompany[] = \R::load('company', $company_id);
+                $this->sharedCompany[] = \R::load('company', $company_id);
             }
         }
     }

@@ -9,17 +9,13 @@ use wp_infinite\Controller\ModelController;
  */
 class Geo extends ModelController
 {
-    function __construct($tableId = 0)
-    {
-        parent::__construct($tableId);
-    }
-
+    protected $name;
     /**
      * @return string
      */
     public function getName()
     {
-        return $this->dataModel->name;
+        return $this->name;
     }
 
     /**
@@ -27,7 +23,7 @@ class Geo extends ModelController
      */
     public function setName($name)
     {
-        $this->dataModel->name = $name;
+        $this->name = $name;
     }
 
 }

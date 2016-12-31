@@ -28,9 +28,9 @@ class RedBeanController
         }
 
         if (!$bypass_prefix) {
-            $this->dataModel = \R::dispense($this->table); //underscore is relation
+            $this = \R::dispense($this->table); //underscore is relation
         } else {
-            $this->dataModel = \R::getRedBean()->dispense( $this->table ); //can use underscore
+            $this = \R::getRedBean()->dispense( $this->table ); //can use underscore
         }
 
         if ((is_numeric($id) && $id > 0) || is_array($id)) {
@@ -44,7 +44,7 @@ class RedBeanController
      */
     public function getId()
     {
-        return $this->dataModel->id;
+        return $this->id;
     }
 
     /**
@@ -86,14 +86,14 @@ class RedBeanController
      */
     public function insertAction($force = false)
     {
-        if ($this->dataModel->id > 0 && !$force) {
+        if ($this->id > 0 && !$force) {
             throw new \Exception("Insert don't need ID, it's auto increase");
         }
         if ($this->timestamp) {
-            $this->dataModel->created_at = date("Y-m-d H:i:s");
-            $this->dataModel->updated_at = date("Y-m-d H:i:s");
+            $this->created_at = date("Y-m-d H:i:s");
+            $this->updated_at = date("Y-m-d H:i:s");
         }
-        return \R::store($this->dataModel);
+        return \R::store($this);
     }
 
     /**
@@ -102,15 +102,15 @@ class RedBeanController
      */
     public function updateAction($force = false)
     {
-        if (!$this->dataModel->id > 0 && !$force) {
+        if (!$this->id > 0 && !$force) {
             throw new \Exception("Update Need ID (please put id when you new class");
         }
 
         if ($this->timestamp) {
-            $this->dataModel->updated_at = date("Y-m-d H:i:s");
+            $this->updated_at = date("Y-m-d H:i:s");
         }
 
-        return \R::store($this->dataModel);
+        return \R::store($this);
     }
 
     /**
@@ -120,7 +120,7 @@ class RedBeanController
     public function readAction($id = 0)
     {
         if (is_numeric($id) && $id > 0) {
-            $this->dataModel->id = $id;
+            $this->id = $id;
         }
         elseif (is_array($id)){
             print_r($this->table);
@@ -128,9 +128,9 @@ class RedBeanController
             return \R::loadAll($this->table, array_column($id, 'id'));
         }
 
-        $data = \R::load($this->table, $this->dataModel->id);
+        $data = \R::load($this->table, $this->id);
         if ($data->id) {
-            $this->dataModel = $data;
+            $this = $data;
             return $data;
         } else {
             return false;
@@ -175,7 +175,7 @@ class RedBeanController
 
     public function deleteAction()
     {
-        return \R::trash($this->table, $this->dataModel->id);
+        return \R::trash($this->table, $this->id);
     }
 
     /**
@@ -371,7 +371,7 @@ class RedBeanController
 
     public function setUnique($columns = [])
     {
-        $this->dataModel->setMeta("buildcommand.unique", $columns);
+        $this->setMeta("buildcommand.unique", $columns);
     }
 
     //-------- Private Zone --------//

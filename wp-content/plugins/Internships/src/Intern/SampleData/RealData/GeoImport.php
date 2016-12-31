@@ -1,6 +1,8 @@
 <?php
 namespace Intern\SampleData\RealData;
 
+use Intern\Model\Geo;
+
 class GeoImport
 {
     private $records = [
@@ -11,7 +13,7 @@ class GeoImport
     {
        iLog('--- Importing GEO ---', true);
         foreach ($this->records as $record) {
-            $geo = new \Intern\Model\Geo();
+            $geo = new Geo();
 
             $geo->setName($record);
 

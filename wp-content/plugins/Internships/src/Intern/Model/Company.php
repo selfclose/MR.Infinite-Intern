@@ -19,7 +19,7 @@ use wp_infinite\Controller\ModelController;
  * @property string address
  * @property int province_id
  * @property int zipcode
- * @property string googleMap
+ * @property string googlemap
  * @property int wallet
  * @property \DateTime end_package_date
  * @property array department
@@ -37,17 +37,32 @@ class Company extends ModelController
     const ACCOUNT_VIP = 'vip';
     const ACCOUNT_PREMIUM = 'premium';
 
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-    }
+    protected $account_type;
+    protected $logo;
+    protected $companytype_id;
+    protected $founder;
+    protected $description;
+    protected $start_date;
+    protected $tel;
+    protected $fax;
+    protected $open_date;
+    protected $province_id;
+    protected $zipcode;
+    protected $googlemap;
+    protected $wallet;
+    protected $end_package_date;
+    protected $department;
+    protected $facebook;
+    protected $website;
+    protected $clicked;
+    protected $rating;
 
     /**
      * @return string
      */
     public function getAccountType()
     {
-        return $this->dataModel->account_type;
+        return $this->account_type;
     }
 
     /**
@@ -55,7 +70,7 @@ class Company extends ModelController
      */
     public function setAccountType($account_type)
     {
-        $this->dataModel->account_type = $account_type;
+        $this->account_type = $account_type;
     }
 
     /**
@@ -63,7 +78,7 @@ class Company extends ModelController
      */
     public function getLogoUrl()
     {
-        return $this->dataModel->logo;
+        return $this->logo;
     }
 
     /**
@@ -71,7 +86,7 @@ class Company extends ModelController
      */
     public function getType()
     {
-        return $this->dataModel->companytype_id;
+        return $this->companytype_id;
     }
 
     /**
@@ -79,7 +94,7 @@ class Company extends ModelController
      */
     public function setType($type)
     {
-        $this->dataModel->companytype_id = $type;
+        $this->companytype_id = $type;
     }
 
     /**
@@ -87,7 +102,7 @@ class Company extends ModelController
      */
     public function getFounder()
     {
-        return $this->dataModel->founder;
+        return $this->founder;
     }
 
     /**
@@ -95,7 +110,7 @@ class Company extends ModelController
      */
     public function setFounder($founder)
     {
-        $this->dataModel->founder = $founder;
+        $this->founder = $founder;
     }
 
     /**
@@ -103,7 +118,7 @@ class Company extends ModelController
      */
     public function getDescription()
     {
-        return $this->dataModel->description;
+        return $this->description;
     }
 
     /**
@@ -111,7 +126,7 @@ class Company extends ModelController
      */
     public function setDescription($description)
     {
-        $this->dataModel->description = $description;
+        $this->description = $description;
     }
 
     /**
@@ -119,7 +134,7 @@ class Company extends ModelController
      */
     public function getStartDate()
     {
-        return $this->dataModel->start_date;
+        return $this->start_date;
     }
 
     /**
@@ -127,7 +142,7 @@ class Company extends ModelController
      */
     public function setStartDate($start_date)
     {
-        $this->dataModel->start_date = $start_date;
+        $this->start_date = $start_date;
     }
 
     /**
@@ -135,7 +150,7 @@ class Company extends ModelController
      */
     public function getTel()
     {
-        return unserialize($this->dataModel->tel);
+        return unserialize($this->tel);
     }
 
     /**
@@ -143,7 +158,7 @@ class Company extends ModelController
      */
     public function setTel($tel)
     {
-        $this->dataModel->tel = serialize($tel);
+        $this->tel = serialize($tel);
     }
 
     /**
@@ -151,7 +166,7 @@ class Company extends ModelController
      */
     public function getFax()
     {
-        return unserialize($this->dataModel->fax);
+        return unserialize($this->fax);
     }
 
     /**
@@ -159,7 +174,7 @@ class Company extends ModelController
      */
     public function setFax($fax)
     {
-        $this->dataModel->fax = serialize($fax);
+        $this->fax = serialize($fax);
     }
 
     /**
@@ -167,7 +182,7 @@ class Company extends ModelController
      */
     public function getOpenDate()
     {
-        return $this->dataModel->open_date;
+        return $this->open_date;
     }
 
     /**
@@ -175,7 +190,7 @@ class Company extends ModelController
      */
     public function setOpenDate($open_date)
     {
-        $this->dataModel->open_date = $open_date;
+        $this->open_date = $open_date;
     }
 
     /**
@@ -183,7 +198,7 @@ class Company extends ModelController
      */
     public function getAddress()
     {
-        return $this->dataModel->address;
+        return $this->address;
     }
 
     /**
@@ -191,7 +206,7 @@ class Company extends ModelController
      */
     public function setAddress($address)
     {
-        $this->dataModel->address = $address;
+        $this->address = $address;
     }
 
     /**
@@ -199,7 +214,7 @@ class Company extends ModelController
      */
     public function getProvinceId()
     {
-        return $this->dataModel->province_provinceid;
+        return $this->province_provinceid;
     }
 
     /**
@@ -207,7 +222,7 @@ class Company extends ModelController
      */
     public function setProvinceId($province_id)
     {
-        $this->dataModel->province_id = $province_id;
+        $this->province_id = $province_id;
     }
 
     /**
@@ -215,7 +230,7 @@ class Company extends ModelController
      */
     public function getZipcode()
     {
-        return $this->dataModel->zipcode;
+        return $this->zipcode;
     }
 
     /**
@@ -223,7 +238,7 @@ class Company extends ModelController
      */
     public function setZipcode($zipcode)
     {
-        $this->dataModel->zipcode = $zipcode;
+        $this->zipcode = $zipcode;
     }
 
     /**
@@ -231,7 +246,7 @@ class Company extends ModelController
      */
     public function getGoogleMap()
     {
-        return $this->dataModel->googleMap;
+        return $this->googleMap;
     }
 
     /**
@@ -239,7 +254,7 @@ class Company extends ModelController
      */
     public function setGoogleMap($googleMap)
     {
-        $this->dataModel->googleMap = $googleMap;
+        $this->googleMap = $googleMap;
     }
 
     /**
@@ -247,7 +262,7 @@ class Company extends ModelController
      */
     public function getWallet()
     {
-        return $this->dataModel->wallet;
+        return $this->wallet;
     }
 
     /**
@@ -255,7 +270,7 @@ class Company extends ModelController
      */
     public function setWallet($wallet)
     {
-        $this->dataModel->wallet = $wallet;
+        $this->wallet = $wallet;
     }
 
     /**
@@ -263,7 +278,7 @@ class Company extends ModelController
      */
     public function getEndPackageDate()
     {
-        return $this->dataModel->end_package_date;
+        return $this->end_package_date;
     }
 
     /**
@@ -271,7 +286,7 @@ class Company extends ModelController
      */
     public function setEndPackageDate($end_package_date)
     {
-        $this->dataModel->end_package_date = $end_package_date;
+        $this->end_package_date = $end_package_date;
     }
 
     /**
@@ -279,7 +294,7 @@ class Company extends ModelController
      */
     public function getDepartment()
     {
-        return $this->dataModel->department;
+        return $this->department;
     }
 
     /**
@@ -287,7 +302,7 @@ class Company extends ModelController
      */
     public function setDepartment($department)
     {
-        $this->dataModel->department = $department;
+        $this->department = $department;
     }
 
     /**
@@ -295,7 +310,7 @@ class Company extends ModelController
      */
     public function getFacebook()
     {
-        return $this->dataModel->facebook;
+        return $this->facebook;
     }
 
     /**
@@ -303,7 +318,7 @@ class Company extends ModelController
      */
     public function setFacebook($facebook)
     {
-        $this->dataModel->facebook = $facebook;
+        $this->facebook = $facebook;
     }
 
     /**
@@ -311,7 +326,7 @@ class Company extends ModelController
      */
     public function getWebsite()
     {
-        return $this->dataModel->website;
+        return $this->website;
     }
 
     /**
@@ -319,7 +334,7 @@ class Company extends ModelController
      */
     public function setWebsite($website)
     {
-        $this->dataModel->website = $website;
+        $this->website = $website;
     }
 
     /**
@@ -327,7 +342,7 @@ class Company extends ModelController
      */
     public function getClicked()
     {
-        return $this->dataModel->clicked;
+        return $this->clicked;
     }
 
     /**
@@ -335,7 +350,7 @@ class Company extends ModelController
      */
     public function setClicked($clicked)
     {
-        $this->dataModel->clicked = $clicked;
+        $this->clicked = $clicked;
     }
 
     /**
@@ -343,7 +358,7 @@ class Company extends ModelController
      */
     public function getRating()
     {
-        return $this->dataModel->rating;
+        return $this->rating;
     }
 
     /**
@@ -351,6 +366,6 @@ class Company extends ModelController
      */
     public function setRating($rating)
     {
-        $this->dataModel->rating = $rating;
+        $this->rating = $rating;
     }
 }

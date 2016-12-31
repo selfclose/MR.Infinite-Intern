@@ -4,12 +4,15 @@ namespace Intern\ConcatTrait;
 
 trait NameLangTrait
 {
+    protected $name;
+
+
     /**
      * @return string
      */
     public function getName($lang = 'th')
     {
-        return $this->dataModel['name_'.$lang];
+        return $this['name_'.$lang];
     }
 
     /**
@@ -17,6 +20,6 @@ trait NameLangTrait
      */
     public function setName($name, $lang = 'th')
     {
-        $this->dataModel['name_'.$lang] = $name;
+        $this['name_'.$lang] = $name;
     }
 }

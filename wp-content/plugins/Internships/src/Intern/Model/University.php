@@ -28,7 +28,7 @@ class University extends ModelController
      */
     public function getType()
     {
-        return new UniversityType($this->dataModel->universitytype_id);
+        return new UniversityType($this->universitytype_id);
     }
 
     /**
@@ -36,7 +36,7 @@ class University extends ModelController
      */
     public function setType($type)
     {
-        $this->dataModel->universitytype_id = $type;
+        $this->universitytype_id = $type;
     }
 
     /**
@@ -44,7 +44,7 @@ class University extends ModelController
      */
     public function getShortName()
     {
-        return $this->dataModel->short_name;
+        return $this->short_name;
     }
 
     /**
@@ -52,7 +52,7 @@ class University extends ModelController
      */
     public function setShortName($short_name)
     {
-        $this->dataModel->short_name = $short_name;
+        $this->short_name = $short_name;
     }
 
     /**
@@ -60,7 +60,7 @@ class University extends ModelController
      */
     public function getShortNameEng()
     {
-        return $this->dataModel->short_name_eng;
+        return $this->short_name_eng;
     }
 
     /**
@@ -68,7 +68,7 @@ class University extends ModelController
      */
     public function setShortNameEng($short_name_eng)
     {
-        $this->dataModel->short_name_eng = $short_name_eng;
+        $this->short_name_eng = $short_name_eng;
     }
 
     /**
@@ -76,7 +76,7 @@ class University extends ModelController
      */
     public function getWebsite()
     {
-        return $this->dataModel->website;
+        return $this->website;
     }
 
     /**
@@ -84,7 +84,7 @@ class University extends ModelController
      */
     public function setWebsite($website)
     {
-        $this->dataModel->website = $website;
+        $this->website = $website;
     }
 
     /**
@@ -92,7 +92,7 @@ class University extends ModelController
      */
     public function getProvinceId()
     {
-        return $this->dataModel->province_id;
+        return $this->province_id;
     }
 
     /**
@@ -100,6 +100,6 @@ class University extends ModelController
      */
     public function setProvinceId($province_id)
     {
-        $this->dataModel->province_id = $province_id;
+        $this->province_id = $province_id;
     }
 }

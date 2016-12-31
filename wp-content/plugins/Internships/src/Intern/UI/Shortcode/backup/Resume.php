@@ -62,7 +62,7 @@
 ////
 //        //----------------------------
 //
-//        var_dump($skillType->dataModel->sharedSkill);
+//        var_dump($skillType->sharedSkill);
 //        echo "<select name='test'>";
 //
 //        /**

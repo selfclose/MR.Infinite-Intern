@@ -18,20 +18,14 @@ class Job extends ModelController
 
     protected $table = 'job';
 
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-
-        //default value
-        $this->setEnabled(true);
-    }
+    protected $enabled = true;
 
     /**
      * @return string
      */
     public function getTitle()
     {
-        return $this->dataModel->title;
+        return $this->title;
     }
 
     /**
@@ -39,7 +33,7 @@ class Job extends ModelController
      */
     public function setTitle($title)
     {
-        $this->dataModel->title = $title;
+        $this->title = $title;
     }
 
      /**
@@ -47,8 +41,8 @@ class Job extends ModelController
      */
     public function getCompany()
     {
-//        return \R::load('company', $this->dataModel->company_id);
-        return $this->dataModel->company_id;
+//        return \R::load('company', $this->company_id);
+        return $this->company_id;
     }
 
     /**
@@ -56,7 +50,7 @@ class Job extends ModelController
      */
     public function setCompany($company_id)
     {
-        $this->dataModel->company_id = $company_id;
+        $this->company_id = $company_id;
     }
 
 
@@ -65,7 +59,7 @@ class Job extends ModelController
      */
     public function getJobcategoryId()
     {
-        return $this->dataModel->jobcategory_id;
+        return $this->jobcategory_id;
     }
 
     /**
@@ -73,7 +67,7 @@ class Job extends ModelController
      */
     public function setJobcategoryId($jobcategory_id)
     {
-        $this->dataModel->jobcategory_id = $jobcategory_id;
+        $this->jobcategory_id = $jobcategory_id;
     }
 
     /**
@@ -81,7 +75,7 @@ class Job extends ModelController
      */
     public function getDescription()
     {
-        return $this->dataModel->description;
+        return $this->description;
     }
 
     /**
@@ -89,7 +83,7 @@ class Job extends ModelController
      */
     public function setDescription($description)
     {
-        $this->dataModel->description = $description;
+        $this->description = $description;
     }
 
     /**
@@ -97,7 +91,7 @@ class Job extends ModelController
      */
     public function getDepartmentId()
     {
-        return $this->dataModel->companydepartment_id;
+        return $this->companydepartment_id;
     }
 
     /**
@@ -105,7 +99,7 @@ class Job extends ModelController
      */
     public function setDepartmentId($department_id)
     {
-        $this->dataModel->companydepartment_id = $department_id;
+        $this->companydepartment_id = $department_id;
     }
 
     /**
@@ -113,7 +107,7 @@ class Job extends ModelController
      */
     public function getStartDate()
     {
-        return $this->dataModel->start_date;
+        return $this->start_date;
     }
 
     /**
@@ -121,7 +115,7 @@ class Job extends ModelController
      */
     public function setStartDate($start_date)
     {
-        $this->dataModel->start_date = $start_date;
+        $this->start_date = $start_date;
     }
 
     /**
@@ -129,7 +123,7 @@ class Job extends ModelController
      */
     public function getEndDate()
     {
-        return $this->dataModel->end_date;
+        return $this->end_date;
     }
 
     /**
@@ -137,7 +131,7 @@ class Job extends ModelController
      */
     public function setEndDate($end_date)
     {
-        $this->dataModel->end_date = $end_date;
+        $this->end_date = $end_date;
     }
 
     /**
@@ -145,7 +139,7 @@ class Job extends ModelController
      */
     public function getTag()
     {
-        return  $this->dataModel->sharedJobtag;
+        return  $this->sharedJobtag;
     }
 
     /**
@@ -153,10 +147,10 @@ class Job extends ModelController
      */
     public function setTag($tags)
     {
-        unset($this->dataModel->sharedJobtag);
+        unset($this->sharedJobtag);
         if (is_array($tags)) {
             foreach ($tags as $tag) {
-                $this->dataModel->sharedJobtag[] = \R::load('jobtag', $tag);
+                $this->sharedJobtag[] = \R::load('jobtag', $tag);
             }
         }
     }
@@ -166,6 +160,6 @@ class Job extends ModelController
      */
     public function addTag($tagId)
     {
-        $this->dataModel->sharedJobtag[] = \R::load('jobtag', $tagId);
+        $this->sharedJobtag[] = \R::load('jobtag', $tagId);
     }
 }

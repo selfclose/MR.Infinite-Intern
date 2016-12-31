@@ -4,12 +4,13 @@ namespace Intern\ConcatTrait;
 
 trait EnabledTrait
 {
+    protected $enabled;
     /**
      * @return bool
      */
     public function getEnabled()
     {
-        return $this->dataModel->enabled;
+        return $this->enabled;
     }
 
     /**
@@ -17,7 +18,7 @@ trait EnabledTrait
      */
     public function setEnabled($enabled = true)
     {
-        $this->dataModel->enabled = $enabled;
+        $this->enabled = $enabled;
     }
 
 }

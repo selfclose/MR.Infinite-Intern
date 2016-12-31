@@ -28,7 +28,7 @@ class CompanyDepartment extends ModelController
      */
     public function getDescription()
     {
-        return $this->dataModel->description;
+        return $this->description;
     }
 
     /**
@@ -36,7 +36,7 @@ class CompanyDepartment extends ModelController
      */
     public function setDescription($description)
     {
-        $this->dataModel->description = $description;
+        $this->description = $description;
     }
 
     /**
@@ -44,7 +44,7 @@ class CompanyDepartment extends ModelController
      */
     public function getCompanyId()
     {
-        return $this->dataModel->company_id;
+        return $this->company_id;
     }
 
     /**
@@ -52,7 +52,7 @@ class CompanyDepartment extends ModelController
      */
     public function setCompanyId($company_id)
     {
-        $this->dataModel->company_id = $company_id;
+        $this->company_id = $company_id;
     }
 
     /**
@@ -60,7 +60,7 @@ class CompanyDepartment extends ModelController
      */
     public function getUser()
     {
-        return  $this->dataModel->sharedWp_users;
+        return  $this->sharedWp_users;
     }
 
     /**
@@ -68,10 +68,10 @@ class CompanyDepartment extends ModelController
      */
     public function setUser($users)
     {
-        unset($this->dataModel->sharedWp_users);
+        unset($this->sharedWp_users);
         if (is_array($users)) {
             foreach ($users as $tag) {
-                $this->dataModel->sharedWp_users[] = \R::load('wp_users', $tag);
+                $this->sharedWp_users[] = \R::load('wp_users', $tag);
             }
         }
     }
@@ -81,7 +81,7 @@ class CompanyDepartment extends ModelController
      */
     public function getTel()
     {
-        return unserialize($this->dataModel->tel);
+        return unserialize($this->tel);
     }
 
     /**
@@ -89,7 +89,7 @@ class CompanyDepartment extends ModelController
      */
     public function setTel($tel)
     {
-        $this->dataModel->tel = serialize($tel);
+        $this->tel = serialize($tel);
     }
 
     /**
@@ -97,7 +97,7 @@ class CompanyDepartment extends ModelController
      */
     public function getFax()
     {
-        return unserialize($this->dataModel->fax);
+        return unserialize($this->fax);
     }
 
     /**
@@ -105,6 +105,6 @@ class CompanyDepartment extends ModelController
      */
     public function setFax($fax)
     {
-        $this->dataModel->fax = serialize($fax);
+        $this->fax = serialize($fax);
     }
 }
