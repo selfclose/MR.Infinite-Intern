@@ -3,12 +3,17 @@
     {
       "type": "vcs",
       "url": "https://github.com/ronan-gloo/jade-php"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/selfclose/wp_infinite"
     }
   ],
   "require-dev": {
     "fzaninotto/faker": "^1.6",
     "components/jquery": "^3.1",
     "ivaynberg/select2": "^4.0",
-    "ronan-gloo/jadephp": "dev-master"
+    "ronan-gloo/jadephp": "dev-master",
+    "selfclose/wp_infinite": "dev-master"
   }
 }
