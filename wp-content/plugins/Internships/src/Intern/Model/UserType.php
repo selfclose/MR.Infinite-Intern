@@ -1,13 +1,13 @@
 <?php
 namespace Intern\Model;
 use Intern\ConcatTrait\NameLangTrait;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * @property int id
  * @property string name
 **/
-class UserType extends RedBeanController
+class UserType extends ModelController
 {
     protected $table = 'wp_users_type';
 

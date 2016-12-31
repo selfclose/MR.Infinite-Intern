@@ -2,7 +2,7 @@
 namespace Intern\Model;
 
 use Intern\ConcatTrait\EnabledTrait;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * @property int id
@@ -12,7 +12,7 @@ use wp_infinite\Controller\RedBeanController;
  * @property int companydepartment_id
  * @property string description
  */
-class Job extends RedBeanController
+class Job extends ModelController
 {
     use EnabledTrait;
 

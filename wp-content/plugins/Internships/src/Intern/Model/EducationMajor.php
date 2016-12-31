@@ -5,7 +5,7 @@ use Intern\ConcatTrait\EnabledTrait;
 use Intern\ConcatTrait\NameLangTrait;
 use Intern\ConcatTrait\NameTrait;
 use Intern\Config\Table;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * คณะ
@@ -13,7 +13,7 @@ use wp_infinite\Controller\RedBeanController;
  * @property string name_th
  * @property string name_en
  */
-class EducationMajor extends RedBeanController
+class EducationMajor extends ModelController
 {
    use NameLangTrait;
 

@@ -1,6 +1,6 @@
 <?php
 namespace Intern\Model;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 
 /**
@@ -19,7 +19,7 @@ use wp_infinite\Controller\RedBeanController;
  * @property string public GLOBAL | SPECIFIC | PRIVATE
  * @property string status PENDING | APPROVE | REJECT
  */
-class Resume extends RedBeanController
+class Resume extends ModelController
 {
     const PUBLIC_GLOBAL = 'global';
     const PUBLIC_SPECIFIC = 'specific';

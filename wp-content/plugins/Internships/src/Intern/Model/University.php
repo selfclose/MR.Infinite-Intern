@@ -1,7 +1,7 @@
 <?php
 namespace Intern\Model;
 use Intern\ConcatTrait\NameLangTrait;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * @property int id
@@ -12,7 +12,7 @@ use wp_infinite\Controller\RedBeanController;
  * @property string website
  * @property int province_id
  */
-class University extends RedBeanController
+class University extends ModelController
 {
     use NameLangTrait;
 

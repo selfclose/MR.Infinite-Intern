@@ -2,7 +2,7 @@
 namespace Intern\Model;
 use Intern\ConcatTrait\ImageTrait;
 use Intern\ConcatTrait\NameTrait;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * @property string id
@@ -28,7 +28,7 @@ use wp_infinite\Controller\RedBeanController;
  * @property int clicked
  * @property int rating
  */
-class Company extends RedBeanController
+class Company extends ModelController
 {
     use NameTrait;
     use ImageTrait;

@@ -1,13 +1,13 @@
 <?php
 namespace Intern\Model;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * Class Geo
  * @package Intern\Model
  * @property string name
  */
-class Geo extends RedBeanController
+class Geo extends ModelController
 {
     function __construct($tableId = 0)
     {

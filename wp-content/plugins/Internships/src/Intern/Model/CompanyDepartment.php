@@ -1,7 +1,7 @@
 <?php
 namespace Intern\Model;
 use Intern\ConcatTrait\NameLangTrait;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * Class Company
@@ -14,7 +14,7 @@ use wp_infinite\Controller\RedBeanController;
  * @property array tel
  * @property array fax
  */
-class CompanyDepartment extends RedBeanController
+class CompanyDepartment extends ModelController
 {
     use NameLangTrait;
 

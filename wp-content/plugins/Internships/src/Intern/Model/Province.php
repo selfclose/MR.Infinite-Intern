@@ -1,7 +1,7 @@
 <?php
 namespace Intern\Model;
 use Intern\ConcatTrait\NameLangTrait;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * Class Province
@@ -12,7 +12,7 @@ use wp_infinite\Controller\RedBeanController;
  * @property string name_eng
  * @property Geo geo id here
  */
-class Province extends RedBeanController
+class Province extends ModelController
 {
     use NameLangTrait;
 

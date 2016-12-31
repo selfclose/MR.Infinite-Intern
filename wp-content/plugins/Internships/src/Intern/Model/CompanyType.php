@@ -1,6 +1,6 @@
 <?php
 namespace Intern\Model;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 use Intern\ConcatTrait\NameLangTrait;
 /**
  * Class Company
@@ -8,7 +8,7 @@ use Intern\ConcatTrait\NameLangTrait;
  * @property string id
  * @property string name
  */
-class CompanyType extends RedBeanController
+class CompanyType extends ModelController
 {
     use NameLangTrait;
     protected $table = 'companytype';

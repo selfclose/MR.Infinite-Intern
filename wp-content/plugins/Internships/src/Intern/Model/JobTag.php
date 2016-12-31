@@ -2,14 +2,14 @@
 namespace Intern\Model;
 
 use Intern\ConcatTrait\NameLangTrait;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * @property int id
  * @property string name_th
  * @property string name_en
  */
-class JobTag extends RedBeanController
+class JobTag extends ModelController
 {
     use NameLangTrait;
 

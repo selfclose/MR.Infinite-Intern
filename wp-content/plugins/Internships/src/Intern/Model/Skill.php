@@ -2,7 +2,7 @@
 namespace Intern\Model;
 use Intern\ConcatTrait\EnabledTrait;
 use Intern\ConcatTrait\NameTrait;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * Class Skill
@@ -12,7 +12,7 @@ use wp_infinite\Controller\RedBeanController;
  * @property string name
  * @property int skillType
  */
-class Skill extends RedBeanController
+class Skill extends ModelController
 {
     use NameTrait;
     use EnabledTrait;

@@ -1,7 +1,7 @@
 <?php
 namespace Intern\Model;
 
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * @property int id
@@ -15,7 +15,7 @@ use wp_infinite\Controller\RedBeanController;
  *
  * @property string description
  */
-class Education extends RedBeanController
+class Education extends ModelController
 {
 //    const DEGREE_Diploma = 'dip'; //อนุปริญญา
 //    const DEGREE_Bachelor = 'bac'; //ปริญญาตรี

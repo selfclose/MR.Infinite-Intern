@@ -4,7 +4,7 @@ namespace Intern\Model;
 use Intern\ConcatTrait\EnabledTrait;
 use Intern\ConcatTrait\NameLangTrait;
 use Intern\ConcatTrait\NameTrait;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 
 /**
  * คณะ
@@ -12,7 +12,7 @@ use wp_infinite\Controller\RedBeanController;
  * @property string name_th
  * @property string name_en
  */
-class EducationSubMajor extends RedBeanController
+class EducationSubMajor extends ModelController
 {
    use NameLangTrait;
 

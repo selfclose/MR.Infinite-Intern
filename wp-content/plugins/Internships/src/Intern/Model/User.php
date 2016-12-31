@@ -2,7 +2,7 @@
 namespace Intern\Model;
 use Intern\ConcatTrait\ImageTrait;
 use Intern\Config\Table;
-use wp_infinite\Controller\RedBeanController;
+use wp_infinite\Controller\ModelController;
 use Intern\Provider\DateTimeProvider;
 
 /**
@@ -35,7 +35,7 @@ use Intern\Provider\DateTimeProvider;
  * @property string bookmark = []
  * @property string age = 0 //no set no save
 **/
-class User extends RedBeanController
+class User extends ModelController
 {
     use ImageTrait;
 

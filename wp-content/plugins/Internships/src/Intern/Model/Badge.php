@@ -3,6 +3,7 @@ namespace Intern\Model;
 
 use Intern\ConcatTrait\EnabledTrait;
 use Intern\ConcatTrait\NameTrait;
+use wp_infinite\Controller\ModelController;
 
 /**
  * @property string name
@@ -11,14 +12,7 @@ use Intern\ConcatTrait\NameTrait;
  * @property int jobtype_id
  * @property string description
  */
-class Badge extends RedBeanController
+class Badge extends ModelController
 {
     use NameTrait;
-
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-    }
-
-
 }
