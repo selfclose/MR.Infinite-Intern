@@ -5,7 +5,7 @@ use Intern\ConcatTrait\EnabledTrait;
 use Intern\ConcatTrait\NameLangTrait;
 use Intern\ConcatTrait\NameTrait;
 use Intern\Config\Table;
-use vendor\MrInfinite\Controller\RedBeanController;
+use wp_infinite\Controller\RedBeanController;
 
 /**
  * คณะ

@@ -1,5 +1,5 @@
 <?php
-namespace vendor\MrInfinite\Controller;
+namespace wp_infinite\Controller;
 
 class WPPostController
 {

@@ -2,7 +2,7 @@
 namespace Intern\Model;
 
 use Intern\ConcatTrait\EnabledTrait;
-use vendor\MrInfinite\Controller\RedBeanController;
+use wp_infinite\Controller\RedBeanController;
 
 /**
  * @property int id

@@ -2,7 +2,7 @@
 namespace Intern\Model;
 
 use Intern\ConcatTrait\NameTrait;
-use vendor\MrInfinite\Controller\RedBeanController;
+use wp_infinite\Controller\RedBeanController;
 
 /**
  * Class SkillType

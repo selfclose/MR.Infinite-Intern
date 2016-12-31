@@ -1,7 +1,7 @@
 <?php
 namespace Intern\Model;
 use Intern\ConcatTrait\NameLangTrait;
-use vendor\MrInfinite\Controller\RedBeanController;
+use wp_infinite\Controller\RedBeanController;
 
 /**
  * @property int id

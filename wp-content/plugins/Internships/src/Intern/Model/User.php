@@ -2,7 +2,7 @@
 namespace Intern\Model;
 use Intern\ConcatTrait\ImageTrait;
 use Intern\Config\Table;
-use vendor\MrInfinite\Controller\RedBeanController;
+use wp_infinite\Controller\RedBeanController;
 use Intern\Provider\DateTimeProvider;
 
 /**

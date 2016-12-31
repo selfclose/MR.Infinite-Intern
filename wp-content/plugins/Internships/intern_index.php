@@ -115,7 +115,7 @@ function intern_add_script()
 //$output = (new \Jade\jade())->render(__DIR__.'/src/src_ui/Shortcode/template/resume.jade', $data);
 //echo $output;
 
-register_activation_hook(__FILE__, 'intern_on_active_plugin');
+
 function the_slug_exists($post_name) {
     global $wpdb;
     if($wpdb->get_row("SELECT post_name FROM wp_posts WHERE post_name = '{$post_name }'", 'ARRAY_A')) {
@@ -123,16 +123,4 @@ function the_slug_exists($post_name) {
     } else {
         return false;
     }
-}
-
-function intern_on_active_plugin()
-{
-    $post = new \vendor\MrInfinite\Controller\WPPostController();
-
-    $post->setTitle('Intern-Resume-List');
-    $post->setSlug('resume-list');
-    $post->setContent('[intern_resume_list]<br/>This is all the HTML.');
-    $post->setAuthorId(get_current_user_id());
-
-    $post->insertPost();
 }

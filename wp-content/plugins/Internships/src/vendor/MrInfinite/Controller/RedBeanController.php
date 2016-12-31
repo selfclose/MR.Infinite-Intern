@@ -4,7 +4,7 @@
  * use for Redbean 4.^ for core
  * By arnanthachai@intbizth.com
  */
-namespace vendor\MrInfinite\Controller;
+namespace wp_infinite\Controller;
 
 use RedBeanPHP\OODB;
 
