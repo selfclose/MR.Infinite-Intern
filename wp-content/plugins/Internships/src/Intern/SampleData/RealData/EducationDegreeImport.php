@@ -45,8 +45,7 @@ class EducationDegreeImport extends DateTimeProvider
 
         foreach ($this->records as $record) {
             $data = new EducationDegree();
-            $data->setName($record['th']);
-            $data->setName($record['en'], 'en');
+            $data->setName(['en'=>$record['en'], 'th'=>$record['th']]);
 
             if ($data->insertAction()) {
                 iLog('* Inserted Degree : '.$data->getName());

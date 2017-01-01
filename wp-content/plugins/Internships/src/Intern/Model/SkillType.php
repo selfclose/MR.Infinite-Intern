@@ -9,20 +9,20 @@ use wp_infinite\Controller\ModelController;
  * @package Intern\Model
  * @property int|array id
  * @property string name
- * @property array sharedSkill
+
  */
 class SkillType extends ModelController
 {
     use NameTrait;
 
-    protected $sharedSkill;
+    protected $ownSkill;
 
     /**
      * @return array
      */
     public function getSkills()
     {
-        return $this->sharedSkill;
+        return $this->ownSkill;
     }
 
     /**
@@ -30,10 +30,10 @@ class SkillType extends ModelController
      */
     public function setSkills($skills)
     {
-        unset($this->sharedSkill);
+        unset($this->ownSkill);
         if (is_array($skills)) {
             foreach ($skills as $skill) {
-                $this->sharedSkill[] = Skill::find($skill);// \R::load('skill', $skill);
+                $this->ownSkill[] = Skill::find($skill);// \R::load('skill', $skill);
             }
         }
     }
@@ -43,7 +43,7 @@ class SkillType extends ModelController
      */
     public function addSkill($skill_id)
     {
-        $this->sharedSkill[] =  Skill::find($skill_id);//\R::load('skill', $skill_id);
+        $this->ownSkill[] =  Skill::find($skill_id);//\R::load('skill', $skill_id);
         iLog('add_skill '.$skill_id);
     }
 }

@@ -38,10 +38,11 @@ class Importer
         new CompanyDepartmentImport(); //need company & user
         new UniversityTypeImport();
         new UniversityImport();
-        new SkillImport();die('endImport');
+        new SkillImport();
         new EducationDegreeImport();
         new EducationMajorImport();
         new EducationImport(); //need university, Major, degree
+        die('endImport');
         new ResumeImport(); //need user, company, university
         new UserImport(); //need skill, resume, education
         new BadgeImport(); //need user

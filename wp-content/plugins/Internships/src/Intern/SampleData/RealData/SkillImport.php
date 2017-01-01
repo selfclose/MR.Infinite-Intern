@@ -220,18 +220,18 @@ class SkillImport
         foreach ($this->records as $key => $val) {
             $skillType = new SkillType();
             $skillType->setName($key);
+            $skill_type_id = $skillType->insertAction();
 
             foreach ($val as $sk) {
 
                 $skill = new Skill();
                 $skill->setName($sk);
-                $skillID = $skill->insertAction();
+                $skill->setType($skill_type_id);
+                $skill->insertAction();
 
                 iLog('* Inserted Skill: '.$sk);
-
-                $skillType->addSkill($skillID);
             }
-            $skillType->insertAction();
+
             iLog('* Inserted Skill Type: '.$key);
         }
 

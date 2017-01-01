@@ -4,7 +4,6 @@ namespace Intern\ConcatTrait;
 
 trait NameLangTrait
 {
-    /* default is th */
     protected $name = '[]';
 
     function addName($name, $lang = 'th') {
@@ -33,4 +32,7 @@ trait NameLangTrait
             $this->name = json_encode($name_arr, JSON_UNESCAPED_UNICODE);
         }
     }
+//
+//    protected $name;
+//    protected $name_en
 }

@@ -4,6 +4,8 @@ namespace Intern\SampleData\RealData;
 use Intern\Config\Table;
 use Intern\Model\Company;
 use Intern\Model\Education;
+use Intern\Model\EducationDegree;
+use Intern\Model\EducationMajor;
 use Intern\Model\Resume;
 use Intern\Model\University;
 use Intern\Model\User;
@@ -15,11 +17,10 @@ class EducationImport
     {
         iLog('--- Importing Education ---', true);
 
-        $university = new University();
-        $allUniversity = $university::count();
+        $allUniversity = University::count();
 
-        $allDegree = \R::count(Table::DEGREE);
-        $allMajor = \R::count(Table::MAJOR);
+        $allDegree = EducationDegree::count();
+        $allMajor = EducationMajor::count();
 
         global $faker;
 

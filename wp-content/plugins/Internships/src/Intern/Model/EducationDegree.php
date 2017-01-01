@@ -1,26 +1,17 @@
 <?php
 namespace Intern\Model;
 
-use Intern\ConcatTrait\EnabledTrait;
 use Intern\ConcatTrait\NameLangTrait;
-use Intern\ConcatTrait\NameTrait;
-use Intern\Config\Table;
 use wp_infinite\Controller\ModelController;
 
 /**
  * @property int id
- * @property string name_th
- * @property string name_en
+ * @property string name
  */
 class EducationDegree extends ModelController
 {
    use NameLangTrait;
 
-    protected $table = Table::DEGREE;
+    protected $table = 'degree';
 
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-
-    }
 }

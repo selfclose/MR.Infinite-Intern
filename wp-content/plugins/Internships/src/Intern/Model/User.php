@@ -83,11 +83,6 @@ class User extends ModelController
 
     protected $province;
 
-    function __construct($id = 0)
-    {
-        parent::__construct($id, true);
-    }
-
     /**
      * @return string
      */

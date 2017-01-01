@@ -3,18 +3,7 @@ namespace Intern\Model;
 
 use wp_infinite\Controller\ModelController;
 
-/**
- * @property int id
- * @property User user
- * @property string degree
- * @property int university_id
- * @property int GPA
- * @property \DateTime start_year
- * @property \DateTime end_year
- * @property int honour = 0 เกีรตินินม
- *
- * @property string description
- */
+
 class Education extends ModelController
 {
 //    const DEGREE_Diploma = 'dip'; //อนุปริญญา
@@ -25,9 +14,17 @@ class Education extends ModelController
     protected $user;
     protected $degree;
     protected $major;
-    protected $wp_users_id;
+    protected $description;
+    protected $university_id;
+    protected $gpa;
+    protected $start_year;
+    protected $end_year;
     protected $honour = 0;
+
+    protected $wp_users_id;
     protected $degree_id;
+    protected $major_id;
+    protected $sharedUniversity;
 
     //TODO: mis understanding move please
     /**
@@ -74,7 +71,7 @@ class Education extends ModelController
     public function getMajors()
     {
         if (empty($this->major)) {
-            $this->major = new EducationMajor($this->major_id);
+            $this->major = EducationMajor::find($this->major_id);
         }
         return $this->major;
     }
@@ -108,7 +105,7 @@ class Education extends ModelController
      */
     public function getUniversity()
     {
-        return new University($this->sharedUniversity);
+        return University::find($this->sharedUniversity);
     }
 
     /**
@@ -120,19 +117,19 @@ class Education extends ModelController
     }
 
     /**
-     * @return int
+     * @return double
      */
     public function getGPA()
     {
-        return $this->GPA;
+        return $this->gpa;
     }
 
     /**
-     * @param int $GPA
+     * @param double $GPA
      */
     public function setGPA($GPA)
     {
-        $this->GPA = $GPA;
+        $this->gpa = $GPA;
     }
 
     /**
@@ -183,3 +180,14 @@ class Education extends ModelController
         $this->honour = $honour;
     }
 }
+/**
+ * @property int id
+ * @property User user
+ * @property string degree
+ * @property int university_id
+ * @property int GPA
+ * @property \DateTime start_year
+ * @property \DateTime end_year
+ * @property int honour = 0 เกีรตินินม
+ * @property string description
+ */

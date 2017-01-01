@@ -18,6 +18,7 @@ class Skill extends ModelController
     use EnabledTrait;
 
     protected $sharedSkill;
+    protected $skilltype_id;
 
 
 //
@@ -62,6 +63,22 @@ class Skill extends ModelController
     {
         $this->sharedSkill[] = Skill::find($skill);// \R::load('skill', $skill);
         iLog($skill);
+    }
+
+    /**
+     * @return int
+     */
+    public function getType()
+    {
+        return SkillType::find($this->skilltype_id);
+    }
+
+    /**
+     * @param int $type
+     */
+    public function setType($type)
+    {
+        $this->skilltype_id = $type;
     }
 
 }

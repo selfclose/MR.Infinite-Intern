@@ -1,8 +1,6 @@
 <?php
 namespace Intern\Model;
 
-use Intern\ConcatTrait\EnabledTrait;
-use Intern\ConcatTrait\NameLangTrait;
 use Intern\ConcatTrait\NameTrait;
 use Intern\Config\Table;
 use wp_infinite\Controller\ModelController;
@@ -15,12 +13,8 @@ use wp_infinite\Controller\ModelController;
  */
 class EducationMajor extends ModelController
 {
-   use NameLangTrait;
+   use NameTrait;
 
-    protected $table = Table::MAJOR;
+    protected $table = 'major';
 
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-    }
 }
