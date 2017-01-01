@@ -32,9 +32,9 @@ class Importer
 
         //order by priority
         new GeoImport();
-        new ProvinceImport();die('endImport');
+        new ProvinceImport();
         new CompanyTypeImport();
-        new CompanyImport();
+        new CompanyImport();die('endImport');
         new CompanyDepartmentImport(); //need company & user
         new UniversityTypeImport();
         new UniversityImport();

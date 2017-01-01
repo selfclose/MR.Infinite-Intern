@@ -54,6 +54,6 @@ class Listing
         <?php
         echo $user->paginateButtonAction($page, $limit);
 
-        echo "<p>พบงาน: " . $user->countAction() . " รายการ</p>";
+        echo "<p>พบงาน: " . $user::count() . " รายการ</p>";
     }
 }

@@ -59,7 +59,7 @@ class CompanyImport
         global $faker;
 
         $comp_type = new CompanyType();
-        $all_comp_type = $comp_type->countAction();
+        $all_comp_type = $comp_type::count();
 
         iLog('--- Importing Company ---', true);
 

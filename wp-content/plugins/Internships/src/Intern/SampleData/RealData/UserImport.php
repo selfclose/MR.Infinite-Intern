@@ -57,16 +57,16 @@ class UserImport
 //        }
 
         $skill = new Skill();
-        $allSkill = $skill->countAction();
+        $allSkill = $skill::count();
 
         $badge = new Badge();
-        $allBadge = $badge->countAction();
+        $allBadge = $badge::count();
 
         $education = new Education();
-        $allEducation = $education->countAction();
+        $allEducation = $education::count();
 
         $resume = new Education();
-        $allResume = $resume->countAction();
+        $allResume = $resume::count();
         iLog('--- Importing User ---', true);
 
         global $faker;

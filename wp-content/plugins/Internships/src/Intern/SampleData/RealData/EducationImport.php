@@ -16,7 +16,7 @@ class EducationImport
         iLog('--- Importing Education ---', true);
 
         $university = new University();
-        $allUniversity = $university->countAction();
+        $allUniversity = $university::count();
 
         $allDegree = \R::count(Table::DEGREE);
         $allMajor = \R::count(Table::MAJOR);

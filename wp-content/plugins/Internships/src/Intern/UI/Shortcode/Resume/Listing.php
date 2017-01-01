@@ -103,6 +103,6 @@ class Listing
         <?php
         echo $resume->paginateButtonAction($page, $limit);
 
-        echo "<p>พบงาน: " . $resume->countAction() . " รายการ</p>";
+        echo "<p>พบงาน: " . $resume::count() . " รายการ</p>";
     }
 }

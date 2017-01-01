@@ -91,8 +91,7 @@ class ProvinceImport
         foreach ($this->records as $record) {
             $province = new Province();
             $province->setProvinceId($record[0]);
-            $province->setName($record[1]);
-            $province->setName($record[2], 'en');
+            $province->setName(['th'=>$record[1], 'en'=>$record[2]]);
             $province->setGeoId($record[3]);
             if ($province->insertAction()) {
                 iLog('* Inserted Province: '.$record[1]);

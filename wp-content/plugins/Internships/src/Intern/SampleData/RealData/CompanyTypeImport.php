@@ -58,8 +58,7 @@ class CompanyTypeImport
         iLog('--- Importing Company Type ---', true);
         foreach ($this->data as $record) {
             $type = new CompanyType();
-            $type->setName($record['name'], 'th');
-            $type->setName($record['name_eng'], 'en');
+            $type->setName(['th'=>$record['name'], 'en'=>$record['name_eng']]);
             $type->insertAction(true);
             iLog('* Inserted: '.$record['name']);
         }

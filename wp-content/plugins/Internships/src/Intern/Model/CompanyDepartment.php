@@ -18,10 +18,12 @@ class CompanyDepartment extends ModelController
 {
     use NameLangTrait;
 
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-    }
+    protected $description;
+    protected $company_id;
+    protected $wp_user_id;
+    protected $tel;
+    protected $fax;
+    protected $sharedWp_users;
 
     /**
      * @return string

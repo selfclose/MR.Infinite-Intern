@@ -44,10 +44,9 @@ class CompanyDepartmentImport
 
     function __construct()
     {
-        $company = new Company();
-        $allCompany = $company->countAction();
-        $user = new User();
-        $allUser = $user->countAction();
+        $allCompany = Company::count();
+//        $user = new User();
+//        $allUser = $user::count();
 
         global $faker;
 
@@ -55,8 +54,7 @@ class CompanyDepartmentImport
         foreach ($this->records as $record) {
             $data = new CompanyDepartment();
 
-            $data->setName($record['name']);
-            $data->setName($record['name_eng'], 'en');
+            $data->setName(['en'=>$record['name_eng'], 'th'=>$record['name']]);
             $data->setCompanyId(rand(1, $allCompany));
 //            $data->setUser([rand(1, $allUser), rand(1, $allUser)]);
             $data->setDescription($faker->paragraph(1));

@@ -4,6 +4,8 @@ namespace Intern\ConcatTrait;
 
 trait NameTrait
 {
+    protected $name;
+
     /**
      * @return string
      */

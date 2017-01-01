@@ -13,10 +13,10 @@ class ResumeImport
         iLog('--- Importing Resume ---', true);
 
         $user = new User();
-        $allUser = $user->countAction();
+        $allUser = $user::count();
 
         $company = new Company();
-        $allCompany = $company->countAction();
+        $allCompany = $company::count();
 
         global $faker;
 

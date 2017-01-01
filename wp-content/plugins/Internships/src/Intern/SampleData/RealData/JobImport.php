@@ -40,10 +40,10 @@ class JobImport extends DateTimeProvider
         iLog('--- Importing Job ---', true);
 
         $company = new Company();
-        $allCompany = $company->countAction();
+        $allCompany = $company::count();
 
         $tag = new JobTag();
-        $allTag = $tag->countAction();
+        $allTag = $tag::count();
 
         for ($i=0;$i<$loop;$i++) {
             $data = new Job();

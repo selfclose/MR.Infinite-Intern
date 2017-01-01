@@ -72,6 +72,6 @@ class Listing
         <?php
         echo $job->paginateButtonAction($page, $limit);
 
-        echo "<p>พบงาน: " . $job->countAction() . " รายการ</p>";
+        echo "<p>พบงาน: " . $job::count() . " รายการ</p>";
     }
 }

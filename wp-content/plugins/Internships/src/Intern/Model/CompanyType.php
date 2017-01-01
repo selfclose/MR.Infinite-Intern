@@ -12,11 +12,4 @@ class CompanyType extends ModelController
 {
     use NameLangTrait;
     protected $table = 'companytype';
-
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-    }
-
-
 }
