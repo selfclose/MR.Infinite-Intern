@@ -34,11 +34,11 @@ class Importer
         new GeoImport();
         new ProvinceImport();
         new CompanyTypeImport();
-        new CompanyImport();die('endImport');
+        new CompanyImport();
         new CompanyDepartmentImport(); //need company & user
         new UniversityTypeImport();
         new UniversityImport();
-        new SkillImport();
+        new SkillImport();die('endImport');
         new EducationDegreeImport();
         new EducationMajorImport();
         new EducationImport(); //need university, Major, degree

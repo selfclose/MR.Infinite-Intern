@@ -17,12 +17,9 @@ class Skill extends ModelController
     use NameTrait;
     use EnabledTrait;
 
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
+    protected $sharedSkill;
 
-        $this->setEnabled(true);
-    }
+
 //
 //    /**
 //     * @return int SkillType
@@ -56,14 +53,14 @@ class Skill extends ModelController
         unset($this->sharedSkill);
         if (is_array($skills)) {
             foreach ($skills as $skill) {
-                $this->sharedSkill[] = Skill::readAction($skill);// \R::load('skill', $skill);
+                $this->sharedSkill[] = Skill::find($skill);// \R::load('skill', $skill);
             }
         }
     }
 
     public function addSkill($skill)
     {
-        $this->sharedSkill[] = \R::load('skill', $skill);
+        $this->sharedSkill[] = Skill::find($skill);// \R::load('skill', $skill);
         iLog($skill);
     }
 

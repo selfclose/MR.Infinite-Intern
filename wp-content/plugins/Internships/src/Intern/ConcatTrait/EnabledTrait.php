@@ -4,7 +4,7 @@ namespace Intern\ConcatTrait;
 
 trait EnabledTrait
 {
-    protected $enabled;
+    protected $enabled = true;
     /**
      * @return bool
      */

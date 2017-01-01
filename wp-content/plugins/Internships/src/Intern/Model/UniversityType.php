@@ -1,14 +1,10 @@
 <?php
 namespace Intern\Model;
-use Intern\ConcatTrait\NameLangTrait;
+
+use Intern\ConcatTrait\NameTrait;
 use wp_infinite\Controller\ModelController;
 
 class UniversityType extends ModelController
 {
-    use NameLangTrait;
-
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-    }
+    use NameTrait;
 }

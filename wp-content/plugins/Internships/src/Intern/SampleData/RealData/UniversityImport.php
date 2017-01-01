@@ -147,8 +147,7 @@ class UniversityImport
 
         foreach ($this->records as $record) {
             $data = new University();
-            $data->setName($record['name']);
-            $data->setName($record['name_eng'], 'en');
+            $data->setName(['en'=>$record['name_eng'], 'th'=>$record['name']]);
             $data->setType($record['type']);
             $data->setProvinceId($record['province_id']);
             $data->setWebsite($record['website']);

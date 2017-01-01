@@ -5,8 +5,7 @@ use wp_infinite\Controller\ModelController;
 
 /**
  * @property int id
- * @property string name_th
- * @property string name_eng
+ * @property string name
  * @property string short_name
  * @property string short_name_eng
  * @property string website
@@ -16,12 +15,10 @@ class University extends ModelController
 {
     use NameLangTrait;
 
-    protected $type;
-
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-    }
+    protected $shortname;
+    protected $province_id;
+    protected $universitytype_id;
+    protected $website;
 
     /**
      * @return UniversityType
