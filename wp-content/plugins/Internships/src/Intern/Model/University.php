@@ -16,16 +16,16 @@ class University extends ModelController
     use NameLangTrait;
 
     protected $shortname;
-    protected $province_id;
     protected $universitytype_id;
     protected $website;
+    protected $province_id;
 
     /**
      * @return UniversityType
      */
     public function getType()
     {
-        return new UniversityType($this->universitytype_id);
+        return UniversityType::find($this->universitytype_id);
     }
 
     /**
@@ -41,7 +41,7 @@ class University extends ModelController
      */
     public function getShortName()
     {
-        return $this->short_name;
+        return $this->shortname;
     }
 
     /**
@@ -49,7 +49,7 @@ class University extends ModelController
      */
     public function setShortName($short_name)
     {
-        $this->short_name = $short_name;
+        $this->shortname = $short_name;
     }
 
     /**
@@ -89,7 +89,7 @@ class University extends ModelController
      */
     public function getProvinceId()
     {
-        return $this->province_id;
+        return Province::find($this->province_id);
     }
 
     /**

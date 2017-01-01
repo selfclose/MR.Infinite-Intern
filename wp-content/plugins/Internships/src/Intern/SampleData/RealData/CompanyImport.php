@@ -66,8 +66,6 @@ class CompanyImport
         for ($i=0; $i<10;$i++) {
             $data = new Company();
 
-            $data->timestamp = true;
-
             $data->setAccountType($faker->randomElement([Company::ACCOUNT_FREE, Company::ACCOUNT_PREMIUM, Company::ACCOUNT_VIP]));
             $data->setName('บริษัท '.$faker->company);
             $data->setImageUrl($faker->imageUrl(320, 240));

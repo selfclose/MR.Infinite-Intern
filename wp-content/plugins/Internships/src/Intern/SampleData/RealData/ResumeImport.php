@@ -12,17 +12,13 @@ class ResumeImport
     {
         iLog('--- Importing Resume ---', true);
 
-        $user = new User();
-        $allUser = $user::count();
-
-        $company = new Company();
-        $allCompany = $company::count();
+        $allUser = User::count();
+        $allCompany = Company::count();
 
         global $faker;
 
         for ($i=1;$i<$loop;$i++) {
             $data = new Resume();
-            $data->timestamp = true;
 //            $data->setUser(rand(1, $allUser));
             $data->setTitle($faker->name);
             $data->setPingCompanyId(rand(1, $allCompany));

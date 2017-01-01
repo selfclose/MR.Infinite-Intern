@@ -28,22 +28,22 @@ class Importer
 
         iLog('**** Purging All Data! ****', true);
         \R::debug(true);
-        \R::nuke(); //purge all tables
+//        \R::nuke(); //purge all tables
 
         //order by priority
-        new GeoImport();
-        new ProvinceImport();
-        new CompanyTypeImport();
-        new CompanyImport();
-        new CompanyDepartmentImport(); //need company & user
-        new UniversityTypeImport();
-        new UniversityImport();
-        new SkillImport();
-        new EducationDegreeImport();
-        new EducationMajorImport();
-        new EducationImport(); //need university, Major, degree
-        die('endImport');
+//        new GeoImport();
+//        new ProvinceImport();
+//        new CompanyTypeImport();
+//        new CompanyImport();
+//        new CompanyDepartmentImport(); //need company & user
+//        new UniversityTypeImport();
+//        new UniversityImport();
+//        new SkillImport();
+//        new EducationDegreeImport();
+//        new EducationMajorImport();
+//        new EducationImport(); //need university, Major, degree
         new ResumeImport(); //need user, company, university
+        die('endImport');
         new UserImport(); //need skill, resume, education
         new BadgeImport(); //need user
 

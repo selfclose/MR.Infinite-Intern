@@ -1,6 +1,7 @@
 <?php
 namespace Intern\Model;
 use wp_infinite\Controller\ModelController;
+use wp_infinite\TraitMacro\TimestampTrait;
 
 
 /**
@@ -29,22 +30,29 @@ class Resume extends ModelController
     const STATUS_APPROVE = 'approve';
     const STATUS_REJECT = 'reject';
 
-    protected $user;
+    protected $wp_users_id;
+    protected $title;
+    protected $company_id;
+    protected $out_date;
+    protected $type;
+    protected $start_date;
+    protected $end_date;
+    protected $attach_url;
+    protected $description;
+    protected $public;
+    protected $status;
 
-    function __construct($id = 0)
-    {
-        parent::__construct($id);
-    }
+    use TimestampTrait;
 
     /**
      * @return User
      */
     public function getUser()
     {
-        if (empty($this->user)) {
-            $this->user = new User($this->wp_users_id);
+        if (is_null($this->wp_users_id)) {
+            $this->wp_users_id = User::find($this->wp_users_id);
         }
-        return $this->user;
+        return $this->wp_users_id;
     }
 
     /**

@@ -3,6 +3,7 @@ namespace Intern\Model;
 use Intern\ConcatTrait\ImageTrait;
 use Intern\ConcatTrait\NameTrait;
 use wp_infinite\Controller\ModelController;
+use wp_infinite\TraitMacro\TimestampTrait;
 
 /**
  * @property string id
@@ -56,6 +57,8 @@ class Company extends ModelController
     protected $website;
     protected $clicked;
     protected $rating;
+
+    use TimestampTrait;
 
     /**
      * @return string

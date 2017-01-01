@@ -593,5 +593,9 @@ class User extends ModelController
     }
 
 
+    public function InsertAction($force = false)
+    {
+        //wp_create_user();
+    }
 
 }
