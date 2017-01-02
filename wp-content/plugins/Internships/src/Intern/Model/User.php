@@ -35,7 +35,7 @@ use Intern\Provider\DateTimeProvider;
  * @property string bookmark = []
  * @property string age = 0 //no set no save
 **/
-class User extends ModelController
+class User extends WPUser
 {
     use ImageTrait;
 

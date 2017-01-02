@@ -3,6 +3,7 @@ namespace Intern\SampleData\RealData;
 
 use Intern\Model\Badge;
 use Intern\Model\Education;
+use Intern\Model\Resume;
 use Intern\Model\Skill;
 use Intern\Model\User;
 
@@ -56,17 +57,10 @@ class UserImport
 //            $data->insertAction();
 //        }
 
-        $skill = new Skill();
-        $allSkill = $skill::count();
-
-        $badge = new Badge();
-        $allBadge = $badge::count();
-
-        $education = new Education();
-        $allEducation = $education::count();
-
-        $resume = new Education();
-        $allResume = $resume::count();
+        $allSkill = Skill::count();
+        $allBadge = Badge::count();
+        $allEducation = Education::count();
+        $allResume = Resume::count();
         iLog('--- Importing User ---', true);
 
         global $faker;

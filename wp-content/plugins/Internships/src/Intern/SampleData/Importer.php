@@ -18,6 +18,7 @@ use Intern\SampleData\RealData\SkillImport;
 use Intern\SampleData\RealData\UniversityImport;
 use Intern\SampleData\RealData\UniversityTypeImport;
 use Intern\SampleData\RealData\UserImport;
+use wp_infinite\Model\WPUsers;
 
 class Importer
 {
@@ -42,9 +43,15 @@ class Importer
 //        new EducationDegreeImport();
 //        new EducationMajorImport();
 //        new EducationImport(); //need university, Major, degree
-        new ResumeImport(); //need user, company, university
-        die('endImport');
+//        new ResumeImport(); //need user, company, university
+        $user = new WPUsers();
+        $user->readAction(1);
+        $user->updateAction();exit;
+        var_dump($user->getUserLogin());
+        var_dump($user::find(1));
+
         new UserImport(); //need skill, resume, education
+        die('endImport');
         new BadgeImport(); //need user
 
         new JobTagImport();
